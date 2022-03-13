@@ -1,0 +1,17 @@
+{
+  "name": "satanbot",
+  "version": "1.0.0",
+  "description": "Discord Bot for Huntsville Heathens",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anthony Castaneda",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^13.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.11.0"
+  }
+}
