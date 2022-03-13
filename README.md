@@ -1,2 +1,3 @@
+# SatanBot
 
-# satan
+![wallpaper](https://anthonycastaneda.com/img/baphomet.png)
