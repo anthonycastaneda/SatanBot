@@ -9,7 +9,9 @@ const { permLevels } = require('./config.js');
 
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
-
+const commands = new Collection();
+const aliases = new Collection();
+const slashcmds = new Collection();
 client.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
