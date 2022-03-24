@@ -1,27 +1,40 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-shadow */
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const fetch = require('node-fetch');
 const { MessageEmbed } = require('discord.js');
+const axios = require('axios');
+const data = '';
+const config = {
+	method: 'get',
+	url: 'https://api.ebird.org/v2/data/obs/US-TX-471/recent?maxResults=1',
+	headers: {
+		'detail': 'simple',
+		'x-ebirdapitoken': 'lgdq3n89jv3v',
+	},
+	data: data,
+};
 
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('bird')
-		.setDescription('Get local bird fact'),
-
+		.setDescription('Get Latest Walker County Bird Observation'),
 	async execute(interaction) {
-		const response = await interaction.deferReply(); fetch({
-			url: 'https://api.ebird.org/v2/data/obs/geo/recent?lat=30.72&lng=-95.55',
-			headers: {
-				'x-ebirdapitoken': 'lgdq3n89jv3v' },
-		}).then(response => response.json())
-			.then(data => {
-				const birdEmbed = new MessageEmbed()
+		await interaction.deferReply();
+		axios(config)
+			.then((response) => {
+				const birdJson = response.data;
+				const jsonPretty = JSON.stringify(birdJson, null, 4);
+				console.log(jsonPretty);
+				{const birdEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
-					.setTitle('Local Bird Fact')
-					.setDescription(data);
+					.setTitle('The Most Recent Walker County Bird')
+					.setDescription(jsonPretty);
 				return interaction.editReply({ embeds: [birdEmbed] });
-			});
+				}
+
+			})
+			.catch((error) => {
+				console.log(error);
+			},
+			);
 
 	},
 };
