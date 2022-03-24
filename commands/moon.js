@@ -7,6 +7,7 @@
 /* eslint-disable no-undef */
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
+
 var date = (new Date()).toISOString().split('T')[0];
 var axios = require('axios');
 var data = JSON.stringify({
