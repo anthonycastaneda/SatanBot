@@ -16,8 +16,8 @@ module.exports = {
 	async execute(interaction) {
 		const quoteEmbed = new MessageEmbed()
 			.setColor('0xd22b2b')
-			.setTitle('Quotes')
-			.setImage('static/baphy.jpeg')
+			.setTitle('Satan Approved Quotes')
+			.setImage('https://static01.nyt.com/images/2018/11/10/autossell/10-SATANICTEMPLE/09-SATANICTEMPLE-superJumbo.jpg')
 			.setDescription(randomLine);
 		return interaction.reply({ embeds: [quoteEmbed] });
 	},

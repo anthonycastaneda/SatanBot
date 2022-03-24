@@ -21,7 +21,9 @@
     "fs": "^0.0.1-security",
     "node-fetch": "^2.6.7",
     "require-text": "^0.0.1",
-    "undici": "^4.16.0"
+    "undici": "^4.16.0",
+    "xhr": "^2.6.0",
+    "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
     "eslint": "^8.11.0"
