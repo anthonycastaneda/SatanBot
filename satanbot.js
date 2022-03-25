@@ -33,7 +33,7 @@ client.on('interactionCreate', async interaction => {
 	}
 	catch (error) {
 		console.error(error);
-		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+		await interaction.reply({ content: 'GODDAMNIT sThere was an error while executing this command!', ephemeral: true });
 	}
 });
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
