@@ -1,0 +1,4 @@
+
+> satanbot@1.0.0 start
+> node ./bin/www
+
