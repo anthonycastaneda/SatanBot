@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
+const YAML = require('json-to-pretty-yaml');
 const axios = require('axios');
 const data = '';
 const config = {
@@ -21,12 +22,12 @@ module.exports = {
 		axios(config)
 			.then((response) => {
 				const birdJson = response.data;
-				const jsonPretty = JSON.stringify(birdJson, null, 4);
-				console.log(jsonPretty);
+				const yamlPretty = YAML.stringify(birdJson);
+				console.log(yamlPretty);
 				{const birdEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
 					.setTitle('The Most Recent Walker County Bird')
-					.setDescription(jsonPretty);
+					.setDescription(yamlPretty);
 				return interaction.editReply({ embeds: [birdEmbed] });
 				}
 
