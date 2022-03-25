@@ -2,7 +2,7 @@
   "name": "satanbot",
   "version": "1.0.0",
   "description": "Discord Bot for Huntsville Heathens",
-  "main": "index.js",
+  "main": "satanbot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./bin/www"
