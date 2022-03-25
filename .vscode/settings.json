@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/1891a979-8cf2-4716-82ae-a13fa6781e81/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/SatanBot",
+    "appService.deploySubpath": "."
+}
