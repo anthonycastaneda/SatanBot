@@ -38,3 +38,4 @@ jobs:
           port: 22
           password: ${{ secrets.PASSWORD }}
           pm2-id: "SatanBot"
+          overwrite: "true"
