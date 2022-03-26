@@ -13,7 +13,7 @@ jobs:
     - name: Node VPS Deployment
       uses: Techie-Pi/node-vps-deployment@v1.1
       with:
-	    remote-path: "~/SatanBot"
+	remote-path: "~/SatanBot"
         host: 216.128.131.152
         username: "anthonycastaneda"
         port: 22
