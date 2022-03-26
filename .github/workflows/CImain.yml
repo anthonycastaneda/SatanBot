@@ -35,7 +35,7 @@ jobs:
       - name: SCP Files
         uses: appleboy/scp-action@v0.0.1
         with:
-          host: ${{ secrets.HOST }}
+          HOST: ${{ secrets.HOST }}
           USERNAME: ${{ secrets.USERNAME }}
           PORT: ${{ secrets.PORT }}
           KEY: ${{ secrets.SSHKEY }}
