@@ -20,7 +20,7 @@ jobs:
       with:
         source: "."
         target: "/home/anthonycastaneda/SatanBot"
-		overwrite: true
+	overwrite: true
 
     - name: Executing remote command
       uses: appleboy/ssh-action@master
