@@ -10,23 +10,12 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: Copy repository contents via scp
-      uses: appleboy/scp-action@master
-      env:
-        HOST: ${{ secrets.HOST }}
-        USERNAME: ${{ secrets.USERNAME }}
-        PORT: ${{ secrets.PORT }}
-        KEY: ${{ secrets.SSHKEY }}
+    - name: Node VPS Deployment
+      uses: Techie-Pi/node-vps-deployment@v1.1
       with:
-        source: "."
-        target: "/home/anthonycastaneda/SatanBot"
-        overwrite: true
-
-    - name: Executing remote command
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        USERNAME: ${{ secrets.USERNAME }}
-        PORT: ${{ secrets.PORT }}
-        KEY: ${{ secrets.SSHKEY }}
-        script: ls
+	    remote-path: "~/SatanBot"
+        host: 216.128.131.152
+        username: "anthonycastaneda"
+        port: 22
+        password: ${{ secrets.PASSWORD }}
+        pm2-id: "SatanBot"
