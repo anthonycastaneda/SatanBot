@@ -35,9 +35,9 @@ jobs:
       - name: SCP Files
         uses: appleboy/scp-action@v0.0.1
         with:
-          host: 216.128.131.152
-          username: "anthonycastaneda"
-          port: 22
-          password: ${{ secrets.PASSWORD }}
+          host: ${{ secrets.HOST }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PORT: ${{ secrets.PORT }}
+          KEY: ${{ secrets.SSHKEY }}
           source: "deploy.tar"
           target: "~/SatanBot"
