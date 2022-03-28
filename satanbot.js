@@ -23,8 +23,8 @@ const statusMessages = [
   { type: "LISTENING", name: "a bucket of complaints" },
   { type: "PLAYING", name: "with {users} users" },
   { type: "LISTENING", name: "{users} users" },
-  { type: "WATCHING", name: "over {users} users" },
-  { type: "WATCHING", name: "over {channels} channels" },
+  { type: "WATCHING", name: "over ALL the users" },
+  { type: "WATCHING", name: "over ALL the channels" },
   { type: "PLAYING", name: "with your emojis." },
   { type: "PLAYING", name: "Regular updates you won't notice" },
 ];
