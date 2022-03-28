@@ -1,5 +1,5 @@
 const fs = require('node:fs');
-const { Client, Collection, Intents } = require('discord.js');
+const { Client, Collection, Intents, Guild } = require('discord.js');
 const { token } = require('./config.json');
 const logger = require('./modules/logger.js');
 const { readdirSync } = require('fs');
@@ -81,7 +81,7 @@ client.container = {
 };
 
 Updater.updateParserData({
-  users: client.users.cache.size,
+  users: Guild.membercount,
   guilds: client.guilds.cache.size,
   channels: client.channels.cache.size,
 });
