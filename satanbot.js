@@ -6,15 +6,30 @@ const { readdirSync } = require('fs');
 const { permLevels } = require('./config.js');
 const StatusUpdater = require('@tmware/status-rotate');
 
-
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 const commands = new Collection();
 const aliases = new Collection();
 const slashcmds = new Collection();
 client.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-const Updater = new StatusUpdater(client, statusMessages);
 
+
+const statusMessages = [
+  { type: "PLAYING", name: "with my code" },
+  { type: "LISTENING", name: "you" },
+  { type: "PLAYING", name: "hard to get" },
+  { type: "LISTENING", name: "Norwegian Black Metal" },
+  { type: "LISTENING", name: "Björk" },
+  { type: "LISTENING", name: "a bucket of complaints" },
+  { type: "PLAYING", name: "with {users} users" },
+  { type: "LISTENING", name: "{users} users" },
+  { type: "WATCHING", name: "over {users} users" },
+  { type: "WATCHING", name: "over {channels} channels" },
+  { type: "PLAYING", name: "with your emojis." },
+  { type: "PLAYING", name: "Regular updates you won't notice" },
+];
+
+const Updater = new StatusUpdater(client, statusMessages);
 
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
@@ -65,31 +80,20 @@ client.container = {
 	levelCache,
 };
 
-const statusMessages = [
-  { type: "PLAYING", name: "with my code" },
-  { type: "LISTENING", name: "you" },
-  { type: "PLAYING", name: "hard to get" },
-  { type: "LISTENING", name: "Norwegian Black Metal" },
-  { type: "LISTENING", name: "Björk" },
-  { type: "LISTENING", name: "a bucket of complaints" },
-  { type: "PLAYING", name: "with {users} users" },
-  { type: "LISTENING", name: "{users} users" },
-  { type: "WATCHING", name: "over {users} users" },
-  { type: "WATCHING", name: "over {channels} channels" },
-  { type: "PLAYING", name: "with your emojis." },
-  { type: "PLAYING", name: "Regular updates you won't notice" },
-];
-
-// Listen for an event 'updateStatus', update the status when it occurs
-client.on('updateStatus', () => Updater.updateStatus(), () => Updater.updateParserData() );
-
 Updater.updateParserData({
   users: client.users.cache.size,
   guilds: client.guilds.cache.size,
   channels: client.channels.cache.size,
 });
 
+
+// Listen for an event 'updateStatus', update the status when it occurs
+client.on('updateStatus', () => Updater.updateStatus());
+client.on('updateStatus', () => Updater.updateParserData());
+
+
 // Every 10 minutes, emit such an event
-client.setInterval(() => client.emit('updateStatus'), 10 * 60000);
+setInterval(() => client.emit('updateStatus'), 10 * 60000);
+
 
 client.login(token);
