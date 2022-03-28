@@ -37,4 +37,4 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd SatanBot
-          ls -al
+          git pull
