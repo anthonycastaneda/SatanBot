@@ -25,7 +25,7 @@ jobs:
         key: ${{ secrets.KEY }}
         port: ${{ secrets.PORT }}
         source: "deploy.tar"
-        target: "home/anthonycastaneda/SatanBot"
+        target: "~/SatanBot"
         strip_components: 1
         
     - name: executing remote ssh commands using ssh key
