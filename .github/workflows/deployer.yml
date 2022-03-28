@@ -37,6 +37,6 @@ jobs:
         script: |
           cd SatanBot
           git pull
-          /usr/local/bin/pm2 satanbot stop
+          ~/.pm2/pm2 satanbot stop
           node deploy-commands.js
-          /usr/local/bin/pm2 satanbot start
+          ~/.pm2 pm2 satanbot start
