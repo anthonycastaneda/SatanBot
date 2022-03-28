@@ -1,11 +1,10 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
 const fs = require('node:fs');
 const { Client, Collection, Intents } = require('discord.js');
 const { token } = require('./config.json');
 const logger = require('./modules/logger.js');
 const { readdirSync } = require('fs');
 const { permLevels } = require('./config.js');
+const StatusUpdater = require('@tmware/status-rotate');
 
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
@@ -14,6 +13,8 @@ const aliases = new Collection();
 const slashcmds = new Collection();
 client.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+const Updater = new StatusUpdater(client, statusMessages);
+
 
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
@@ -33,7 +34,7 @@ client.on('interactionCreate', async interaction => {
 	}
 	catch (error) {
 		console.error(error);
-		await interaction.reply({ content: 'GODDAMNIT sThere was an error while executing this command!', ephemeral: true });
+		await interaction.reply({ content: 'GODDAMNIT There was an error while executing this command!', ephemeral: true });
 	}
 });
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
@@ -63,4 +64,32 @@ client.container = {
 	slashcmds,
 	levelCache,
 };
+
+const statusMessages = [
+  { type: "PLAYING", name: "with my code" },
+  { type: "LISTENING", name: "you" },
+  { type: "PLAYING", name: "hard to get" },
+  { type: "LISTENING", name: "Norwegian Black Metal" },
+  { type: "LISTENING", name: "Björk" },
+  { type: "LISTENING", name: "a bucket of complaints" },
+  { type: "PLAYING", name: "with {users} users" },
+  { type: "LISTENING", name: "{users} users" },
+  { type: "WATCHING", name: "over {users} users" },
+  { type: "WATCHING", name: "over {channels} channels" },
+  { type: "PLAYING", name: "with your emojis." },
+  { type: "PLAYING", name: "Regular updates you won't notice" },
+];
+
+// Listen for an event 'updateStatus', update the status when it occurs
+client.on('updateStatus', () => Updater.updateStatus(), () => Updater.updateParserData() );
+
+Updater.updateParserData({
+  users: client.users.cache.size,
+  guilds: client.guilds.cache.size,
+  channels: client.channels.cache.size,
+});
+
+// Every 10 minutes, emit such an event
+client.setInterval(() => client.emit('updateStatus'), 10 * 60000);
+
 client.login(token);
