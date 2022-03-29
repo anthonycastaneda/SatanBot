@@ -27,10 +27,7 @@ module.exports = {
 				{const birdEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
 					.setTitle('The Most Recent Walker County Bird')
-					.setDescription(
-                        response.data.comName,
-                        response.data.locName,
-                        response.data.obsDt);
+					.setDescription(response.comName,response.locName,);
 				return interaction.editReply({ embeds: [birdEmbed] });
 				}
 
