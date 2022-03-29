@@ -22,12 +22,15 @@ module.exports = {
 		axios(config)
 			.then((response) => {
 				const birdJson = response.data;
-				const yamlPretty = YAML.stringify(birdJson);
-				console.log(yamlPretty);
+				/* const yamlPretty = YAML.stringify(birdJson);
+				console.log(yamlPretty);*/
 				{const birdEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
 					.setTitle('The Most Recent Walker County Bird')
-					.setDescription(yamlPretty);
+					.setDescription(
+                        response.data.comName,
+                        response.data.locName,
+                        response.data.obsDt);
 				return interaction.editReply({ embeds: [birdEmbed] });
 				}
 
