@@ -25,12 +25,13 @@ module.exports = {
                 let birdName = String(birdJson[0].comName);
                 let birdSci = String(birdJson[0].sciName);
                 let birdLoc = String(birdJson[0].locName);
+                let birdDate = String(birdJson[0].obsDt)
                //  const birdFacts = (birdName,birdSci,birdLoc);
 				// console.log(birdFacts);
 				{const birdEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
 					.setTitle('The Most Recent Walker County Bird')
-					.setDescription(`Common Name: ${birdName}\nScientific Name: ${birdSci}\nLocation: ${birdLoc}`);
+					.setDescription(`**Common Name**:  ${birdName}\n**Scientific Name**:  ${birdSci}\n**Location**:  ${birdLoc}\n**Date**:  ${birdDate}`);
 				return interaction.editReply({ embeds: [birdEmbed] });
 				}
 
