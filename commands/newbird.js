@@ -31,20 +31,15 @@ module.exports = {
                  .page(`${birdName}`)
                  .then((page) => page.mainImage())
                  .then((mainImage) => console.log(typeof mainImage))
-                 .catch((err) => {console.log(err)
-                })
-                /*wiki()
-                  .page(`${birdName}`)
-                  .then((page) => {
-                    let birdImage = String(page.mainImage());
-                    */
+                 .catch((err) => console.log(err))
+                
                       const birdEmbed = new MessageEmbed()
                         .setColor("0xd22b2b")
                         .setTitle("The Most Recent Walker County Bird")
                         .setDescription(
                           `**Common Name**:  ${birdName}\n**Scientific Name**:  ${birdSci}\n**Location**:  ${birdLoc}\n**Date**:  ${birdDate}`
-                        );
-                        //.setImage(`${birdImage}`);
+                        )
+                        .setImage(`${mainImage}`);
                       return interaction.editReply({ embeds: [birdEmbed] });
                     
                   })
