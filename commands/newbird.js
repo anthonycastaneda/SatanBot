@@ -30,10 +30,10 @@ module.exports = {
                     method: 'get',
                     url: `http://en.wikipedia.org/w/api.php?action=query&prop=pageimages&format=json&formatversion=2&piprop=original&titles=${birdName}`};
                 axios(imageSearch).then((imageresponse) => {
-                    const json = JSON.stringify(imageresponse);
+                    const json = JSON.stringify(imageresponse.data);
                     console.log(json);
-                    //const obj = JSON.parse(json);
-                    //console.log(obj.query.pages[0].original.source);
+                    /*const obj = JSON.parse(json);
+                    console.log(obj.query.pages[0].original.source);*/
                  } );
 				{const birdEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
