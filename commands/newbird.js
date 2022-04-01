@@ -31,8 +31,9 @@ module.exports = {
                   url: `https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&prop=pageimages&piprop=original&titles=${birdName}`,
                   data: data
                 };*/
-                const summary = wiki.summary(`${birdName}`);
-                console.log(summary);
+               const page = await wiki.page(`${birdName}`, {autoSuggest: true, preload:true, fields:["summary", "images"]});
+               const summary = await page.summary(); 
+               console.log(summary);
                       //Response of type @wikiSummary - contains the intro and the main image
                    
                 
