@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
-const wiki = require('wikijs').default;
+const gse = require("general-search-engine");
 const axios = require('axios');
 const { inspect } = require("util");
 const data = '';
@@ -28,22 +28,16 @@ module.exports = {
                 let birdLoc = String(birdJson[0].locName);
                 let birdDate = String(birdJson[0].obsDt);
                 // Image Portion
-                let configImage = {
-                  method: "get",
-                  url: `https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&prop=pageimages&piprop=original&titles=${birdName}`,
-                };
+                async function main() {
+                  let petition = await new gse.search()
+                    .setType("image")
+                    .setQuery(`${birdName}`)
+                    .run();
 
-                axios(configImage)
-                  .then((response) => {
-                    let jsonImage = response.data;
-                    console.log(inspect(jsonImage));
-                    let pageImage = jsonImage.pages;
-                    console.log(pageImage);
-                  })
-                  .catch((error) => {
-                    console.log(error);
-                  });
-                  
+                  console.log(petition);
+                }
+
+                main();
                 
                       const birdEmbed = new MessageEmbed()
                         .setColor("0xd22b2b")
