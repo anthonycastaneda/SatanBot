@@ -33,8 +33,8 @@ module.exports = {
                     data: imagedata,};
                 axios(imageSearch).then((imageresponse) => {
                     const birdImage = imageresponse.imagedata;
-                    let birdPic = birdImage[0].original.source;
-                    console.log(birdPic);
+                    //let birdPic = birdImage[0].original.source;
+                    console.log(birdImage);
                     });
 				{const birdEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
