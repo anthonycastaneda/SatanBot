@@ -33,7 +33,7 @@ module.exports = {
                 };
                 axios(imageSearch).then((imageresponse) => {
                   let birdImage = imageresponse.data
-                  let birdimgStr = String(birdImage.pages[0].source);
+                  let birdimgStr = String(birdImage);
                   //const page = json.query
                   // console.log(page.pages[0]);
                   //const obj = page;
