@@ -2,7 +2,6 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
 const wiki = require('wikijs').default;
 const axios = require('axios');
-const { Page } = require('wikipedia');
 const data = '';
 const config = {
 	method: 'get',
@@ -27,17 +26,11 @@ module.exports = {
                 let birdSci = String(birdJson[0].sciName);
                 let birdLoc = String(birdJson[0].locName);
                 let birdDate = String(birdJson[0].obsDt);
-                (async () => {
-                  try {                   
-                    const summaryWithoutPage = await wiki.summary(`${birdName}`);
-                    console.log(summaryWithoutPage);
-                    // summaryThroughPage = summaryWithoutPage
-                    //Response of type @wikiSummary - contains the intro and the main image
-                  } catch (error) {
-                    console.log(error);
-                    //=> Typeof wikiError
-                  }
-                })();
+                
+                wiki
+                  .page(`${birdName}`)
+                  .then((page) => page.mainImage())
+                  .then(console.log);
                 
                 /*wiki()
                   .page(`${birdName}`)
@@ -49,8 +42,8 @@ module.exports = {
                         .setTitle("The Most Recent Walker County Bird")
                         .setDescription(
                           `**Common Name**:  ${birdName}\n**Scientific Name**:  ${birdSci}\n**Location**:  ${birdLoc}\n**Date**:  ${birdDate}`
-                        )
-                        .setImage(`${birdImage}`);
+                        );
+                        //.setImage(`${birdImage}`);
                       return interaction.editReply({ embeds: [birdEmbed] });
                     
                   })
