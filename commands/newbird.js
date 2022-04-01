@@ -31,7 +31,7 @@ module.exports = {
                     url: `http://en.wikipedia.org/w/api.php?action=query&prop=pageimages&format=json&formatversion=2&piprop=original&titles=${birdName}`};
                 axios(imageSearch).then((imageresponse) => {
                     let imageJson = imageresponse.data;
-                    console.log(JSON.stringify(imageJson));
+                    console.log(JSON.stringify(imageJson.query.pages[0].original.source));
                     });
 				{const birdEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
