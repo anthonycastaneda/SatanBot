@@ -26,7 +26,8 @@ module.exports = {
                 let birdSci = birdJson[0].sciName;
                 let birdLoc = birdJson[0].locName;
                 const birdFacts = birdName +  birdSci + birdLoc;
-				const birdString = JSON.stringify(birdFacts);
+                const result = birdFacts => Object.values().flat().join(" ");
+				const birdString = result; //JSON.stringify(birdFacts);
 				console.log(birdString);
 				{const birdEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
