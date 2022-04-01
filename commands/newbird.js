@@ -35,10 +35,10 @@ module.exports = {
               (async () => {
                 try {
                   const page = await wiki.page(`${birdName}`);
-                  console.log(page.imageResult);
+                  console.log(page.images);
                   //Response of type @Page object
                   const summaryThroughPage = await page.summary();
-                  console.log(summaryThroughPage);
+                  console.log(summaryThroughPage.originalImage);
                   // summaryThroughPage = summaryWithoutPage
                   //Response of type @wikiSummary - contains the intro and the main image
                 } catch (error) {
