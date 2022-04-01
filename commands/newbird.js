@@ -26,10 +26,9 @@ module.exports = {
                 let birdSci = String(birdJson[0].sciName);
                 let birdLoc = String(birdJson[0].locName);
                 let birdDate = String(birdJson[0].obsDt);
-                
-                let wikiPage = wiki().page(`${birdName}`);
-                let pageUrl = wikiPage.pageImage();
-                console.log(pageUrl);
+                // Image Portion
+                let wikiPage = (wiki().page(`${birdName}`)).pageImage;
+                console.log(wikiPage);
                 
                 /*wiki()
                   .page(`${birdName}`)
