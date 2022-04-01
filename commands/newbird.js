@@ -35,7 +35,7 @@ module.exports = {
                 wiki()
                   .page(`${birdName}`)
                   .then((page) =>
-                    page.chain().summary().image().request()
+                    page.chain().summary().image().request().then(console.log)
                   );
                 
 
