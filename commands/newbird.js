@@ -22,9 +22,9 @@ module.exports = {
 		axios(config)
 			.then((response) => {
 				const birdJson = response.data;
-                const birdSelect = (birdJson[0].comName, birdJson[0].sciName, birdJson[0].locName);
-				const birdString = JSON.stringify(birdSelect)
-				// console.log(birdString);
+                console.log(birdJson[0].comName);
+				const birdString = JSON.stringify(birdJson[0].comName)
+				console.log(birdString);
 				{const birdEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
 					.setTitle('The Most Recent Walker County Bird')
