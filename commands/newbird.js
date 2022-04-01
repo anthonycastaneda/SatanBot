@@ -35,9 +35,11 @@ module.exports = {
                 wiki()
                   .page(`${birdName}`)
                   .then((page) =>
-                    page.chain().summary().mainImage().request().then(console.log)
-                  );
-                
+                    page.mainImage()).then(console.log);
+                wiki
+                  .page(`${birdName}`)
+                  .then((page) => page.summary())
+                  .then(console.log);
 
 
                /*axios(imageSearch).then((imageresponse) => {
