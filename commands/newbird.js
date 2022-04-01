@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
-const fetch = require('node-fetch');
+const wiki = require('wikipedia');
 const axios = require('axios');
 const data = '';
 const config = {
@@ -25,43 +25,23 @@ module.exports = {
                 let birdName = String(birdJson[0].comName);
                 let birdSci = String(birdJson[0].sciName);
                 let birdLoc = String(birdJson[0].locName);
-                let birdDate = String(birdJson[0].obsDt)
-                /*let imageSearch = {
+                let birdDate = String(birdJson[0].obsDt)(
+                  /*let imageSearch = {
                   method: "get",
                   url: `https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&prop=pageimages&piprop=original&titles=${birdName}`,
                   data: data
                 };*/
-                var url = "https://en.wikipedia.org/w/api.php";
-
-                var params = {
-                  action: "query",
-                  prop: "pageimages",
-                  titles: `${birdName}`,
-                  format: "json",
-                };
-
-                url = url + "?origin=*";
-                Object.keys(params).forEach(function (key) {
-                  url += "&" + key + "=" + params[key];
-                });
-
-                fetch(url)
-                  .then(function (response) {
-                    console.log(response.query.pages[0].original.source);
-                    return response.json();
-                  })
-                  .then(function (response) {
-                    var pages = response.query.pages;
-                    for (var page in pages) {
-                      for (var img of pages[page]) {
-                        //console.log(img.source);
-                      }
+                async () => {
+                    try {
+                      const summary = await wiki.summary(`${birdName}`);
+                      console.log(summary);
+                      //Response of type @wikiSummary - contains the intro and the main image
+                    } catch (error) {
+                      console.log(error);
+                      //=> Typeof wikiError
                     }
-                  })
-                  .catch(function (error) {
-                    console.log(error);
-                  });
-
+                  }
+                )();
 
 
                /*axios(imageSearch).then((imageresponse) => {
