@@ -32,9 +32,9 @@ module.exports = {
                 axios(imageSearch).then((imageresponse) => {
                     const json = imageresponse.data;
                     const page = json.query
-                    console.log(page.pages.original);
-                    /*const obj = JSON.parse(json);
-                    console.log(obj.query.pages[0].original.source);*/
+                    // console.log(page.pages[0]);
+                    const obj = JSON.parse(page);
+                    console.log(obj);
                  } );
 				{const birdEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
