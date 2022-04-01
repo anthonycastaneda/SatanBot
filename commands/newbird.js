@@ -26,7 +26,7 @@ module.exports = {
                 let birdSci = String(birdJson[0].sciName);
                 let birdLoc = String(birdJson[0].locName);
                //  const birdFacts = (birdName,birdSci,birdLoc);
-				console.log(birdFacts);
+				// console.log(birdFacts);
 				{const birdEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
 					.setTitle('The Most Recent Walker County Bird')
