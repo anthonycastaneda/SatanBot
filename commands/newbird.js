@@ -30,7 +30,7 @@ module.exports = {
                     method: 'get',
                     url: `http://en.wikipedia.org/w/api.php?action=query&prop=pageimages&format=json&formatversion=2&piprop=original&titles=${birdName}`};
                 axios(imageSearch).then((imageresponse) => {
-                    let imageJson = imageSearch.data;
+                    let imageJson = imageresponse.data;
                     console.log(JSON.stringify(imageJson));
                     });
 				{const birdEmbed = new MessageEmbed()
