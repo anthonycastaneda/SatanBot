@@ -2,6 +2,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
 const wiki = require('wikijs').default;
 const axios = require('axios');
+const { inspect } = require("util");
 const data = '';
 const config = {
 	method: 'get',
@@ -35,14 +36,14 @@ module.exports = {
                 axios(configImage)
                   .then((response) => {
                     let jsonImage = response.data;
-                    console.log(jsonImage);
+                    console.log(inspect(jsonImage));
                     let pageImage = jsonImage.pages;
                     console.log(pageImage);
                   })
                   .catch((error) => {
                     console.log(error);
                   });
-
+                  
                 
                       const birdEmbed = new MessageEmbed()
                         .setColor("0xd22b2b")
