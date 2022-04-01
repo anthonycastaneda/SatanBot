@@ -25,13 +25,13 @@ module.exports = {
                 let birdName = String(birdJson[0].comName);
                 let birdSci = String(birdJson[0].sciName);
                 let birdLoc = String(birdJson[0].locName);
-                let birdDate = String(birdJson[0].obsDt)(
+                let birdDate = String(birdJson[0].obsDt);
                   /*let imageSearch = {
                   method: "get",
                   url: `https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&prop=pageimages&piprop=original&titles=${birdName}`,
                   data: data
                 };*/
-                async () => {
+                async (bird) => {
                     try {
                       const summary = await wiki.summary(`${birdName}`);
                       console.log(summary);
@@ -40,8 +40,9 @@ module.exports = {
                       console.log(error);
                       //=> Typeof wikiError
                     }
+                    bird;
                   }
-                )();
+                
 
 
                /*axios(imageSearch).then((imageresponse) => {
