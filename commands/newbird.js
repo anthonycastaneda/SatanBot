@@ -32,12 +32,13 @@ module.exports = {
                   data: data
                 };
                 axios(imageSearch).then((imageresponse) => {
-                    const json = imageresponse;
-                    //const page = json.query
-                    // console.log(page.pages[0]);
-                    //const obj = page;
-                    console.dir(json, { depth: 4 });
-                 } );
+                  let birdImage = imageresponse.data
+                  let birdimgStr = String(birdImage[0].pages[0].source);
+                  //const page = json.query
+                  // console.log(page.pages[0]);
+                  //const obj = page;
+                  console.log(birdimgStr);
+                });
 				{const birdEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
 					.setTitle('The Most Recent Walker County Bird')
