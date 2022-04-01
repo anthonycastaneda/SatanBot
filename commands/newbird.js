@@ -31,17 +31,10 @@ module.exports = {
                   url: `https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&prop=pageimages&piprop=original&titles=${birdName}`,
                   data: data
                 };*/
-                async (bird) => {
-                    try {
-                      const summary = await wiki.summary(`${birdName}`);
-                      console.log(summary);
+                const summary = wiki.summary(`${birdName}`);
+                console.log(summary);
                       //Response of type @wikiSummary - contains the intro and the main image
-                    } catch (error) {
-                      console.log(error);
-                      //=> Typeof wikiError
-                    }
-                    bird;
-                  }
+                   
                 
 
 
