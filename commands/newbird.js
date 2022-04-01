@@ -30,7 +30,7 @@ module.exports = {
                     method: 'get',
                     url: `http://en.wikipedia.org/w/api.php?action=query&prop=pageimages&format=json&formatversion=2&piprop=original&titles=${birdName}`};
                 axios(imageSearch).then((imageresponse) => {
-                    const json = imageresponse;
+                    const json = imageresponse.data;
                     console.log(json);
                     /*const obj = JSON.parse(json);
                     console.log(obj.query.pages[0].original.source);*/
