@@ -31,12 +31,22 @@ module.exports = {
                   url: `https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&prop=pageimages&piprop=original&titles=${birdName}`,
                   data: data
                 };*/
-               const page = await wiki.page(`${birdName}`, {autoSuggest: true, preload:true, fields:["summary", "images"]});
-               const summary = await page.summary(); 
-               console.log(summary);
-                      //Response of type @wikiSummary - contains the intro and the main image
-                   
-                
+              (async () => {
+                try {
+                  const page = await wiki.page(`${birdName}`);
+                  console.log(response);
+                  //Response of type @Page object
+                  const summaryThroughPage = await page.summary();
+                  console.log(summary);
+                  const summaryWithoutPage = await wiki.summary("Batman");
+                  console.log(summary);
+                  // summaryThroughPage = summaryWithoutPage
+                  //Response of type @wikiSummary - contains the intro and the main image
+                } catch (error) {
+                  console.log(error);
+                  //=> Typeof wikiError
+                }
+              })();
 
 
                /*axios(imageSearch).then((imageresponse) => {
