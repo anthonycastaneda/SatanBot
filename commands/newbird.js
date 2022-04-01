@@ -34,7 +34,7 @@ module.exports = {
 
                 axios(configImage)
                   .then((response) => {
-                    console.log(response.query.pages[0].original.source);
+                    console.log(response.query);
                   })
                   .catch((error) => {
                     console.log(error);
