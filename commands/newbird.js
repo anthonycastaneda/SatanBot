@@ -2,6 +2,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
 const wiki = require('wikipedia');
 const axios = require('axios');
+const { Page } = require('wikipedia');
 const data = '';
 const config = {
 	method: 'get',
@@ -34,12 +35,12 @@ module.exports = {
               (async () => {
                 try {
                   const page = await wiki.page(`${birdName}`);
-                  console.log(response);
+                  console.log(page);
                   //Response of type @Page object
                   const summaryThroughPage = await page.summary();
-                  console.log(summary);
+                  console.log(summaryThroughPage);
                   const summaryWithoutPage = await wiki.summary("Batman");
-                  console.log(summary);
+                  console.log(summaryWithoutPage);
                   // summaryThroughPage = summaryWithoutPage
                   //Response of type @wikiSummary - contains the intro and the main image
                 } catch (error) {
