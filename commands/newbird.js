@@ -28,8 +28,10 @@ module.exports = {
                 let birdDate = String(birdJson[0].obsDt);
                 
                 wiki() .page(`${birdName}`)
-                  .then((page) => page.pageImage())
-                  .then(res, console.log);
+                  .then(function (page) {
+                          return page.pageImage();
+                      })
+                  .then(console.log);
                 
                 /*wiki()
                   .page(`${birdName}`)
