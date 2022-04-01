@@ -27,22 +27,27 @@ module.exports = {
                 let birdSci = String(birdJson[0].sciName);
                 let birdLoc = String(birdJson[0].locName);
                 let birdDate = String(birdJson[0].obsDt);
-                wiki().page(`${birdName}`).then((page) =>
-                {let birdImage = page.mainImage()
-                {const birdEmbed = new MessageEmbed()
-					.setColor('0xd22b2b')
-					.setTitle('The Most Recent Walker County Bird')
-					.setDescription(`**Common Name**:  ${birdName}\n**Scientific Name**:  ${birdSci}\n**Location**:  ${birdLoc}\n**Date**:  ${birdDate}`)
-                    .setImage(`${birdImage}`);
-				return interaction.editReply({ embeds: [birdEmbed] });
-				}
-            
-
-			})
-			.catch((error) => {
-				console.log(error);
-			},
-			);
+                wiki()
+                  .page(`${birdName}`)
+                  .then((page) => {
+                    let birdImage = String(page.mainImage());
+                    {
+                      const birdEmbed = new MessageEmbed()
+                        .setColor("0xd22b2b")
+                        .setTitle("The Most Recent Walker County Bird")
+                        .setDescription(
+                          `**Common Name**:  ${birdName}\n**Scientific Name**:  ${birdSci}\n**Location**:  ${birdLoc}\n**Date**:  ${birdDate}`
+                        )
+                        .setImage(`${birdImage}`);
+                      return interaction.editReply({ embeds: [birdEmbed] });
+                    }
+                  })
+                  .catch((err) => {
+                    console.log(err);
+                  })
+                  .catch((error) => {
+                    console.log(error);
+                  });
 
     	}
     )
