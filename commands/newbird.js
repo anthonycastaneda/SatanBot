@@ -26,19 +26,51 @@ module.exports = {
                 let birdSci = String(birdJson[0].sciName);
                 let birdLoc = String(birdJson[0].locName);
                 let birdDate = String(birdJson[0].obsDt)
-                let imageSearch = {
+                /*let imageSearch = {
                   method: "get",
                   url: `https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&prop=pageimages&piprop=original&titles=${birdName}`,
                   data: data
+                };*/
+                var url = "https://en.wikipedia.org/w/api.php";
+
+                var params = {
+                  action: "query",
+                  prop: "images",
+                  titles: `${birdName}`,
+                  format: "json",
                 };
-                axios(imageSearch).then((imageresponse) => {
+
+                url = url + "?origin=*";
+                Object.keys(params).forEach(function (key) {
+                  url += "&" + key + "=" + params[key];
+                });
+
+                fetch(url)
+                  .then(function (response) {
+                    return response.json();
+                  })
+                  .then(function (response) {
+                    var pages = response.query.pages;
+                    for (var page in pages) {
+                      for (var img of pages[page].images) {
+                        console.log(img.title);
+                      }
+                    }
+                  })
+                  .catch(function (error) {
+                    console.log(error);
+                  });
+
+
+
+               /*axios(imageSearch).then((imageresponse) => {
                   let birdImage = imageresponse.data
                   let birdimgStr = String(birdImage);
                   //const page = json.query
                   // console.log(page.pages[0]);
                   //const obj = page;
                   console.log(birdimgStr);
-                });
+                });*/
 				{const birdEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
 					.setTitle('The Most Recent Walker County Bird')
