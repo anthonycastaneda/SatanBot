@@ -52,7 +52,7 @@ module.exports = {
                   .then(function (response) {
                     var pages = response.query.pages;
                     for (var page in pages) {
-                      for (var img of pages[page].original) {
+                      for (var img of pages[page].images) {
                         console.log(img.source);
                       }
                     }
