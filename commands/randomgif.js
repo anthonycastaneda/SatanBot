@@ -9,8 +9,8 @@ var config = {
 };
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName("funny")
-    .setDescription("Funny Gifs"),
+    .setName("random-gifs")
+    .setDescription("Random Gifs"),
   async execute(interaction) {
     await interaction.deferReply();
     axios(config).then((response) => {
