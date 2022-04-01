@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
-const YAML = require('json-to-pretty-yaml');
+const fetch = require('node-fetch');
 const axios = require('axios');
 const data = '';
 const config = {
