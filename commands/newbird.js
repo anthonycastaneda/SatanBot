@@ -25,7 +25,7 @@ module.exports = {
                 let birdName = birdJson[0].comName;
                 let birdSci = birdJson[0].sciName;
                 let birdLoc = birdJson[0].locName;
-                let birdFacts = (birdName,birdSci,birdLoc);
+                const birdFacts = birdName +  birdSci + birdLoc;
 				const birdString = JSON.stringify(birdFacts);
 				console.log(birdString);
 				{const birdEmbed = new MessageEmbed()
