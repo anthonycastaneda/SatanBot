@@ -25,16 +25,12 @@ module.exports = {
                 let birdName = String(birdJson[0].comName);
                 let birdSci = String(birdJson[0].sciName);
                 let birdLoc = String(birdJson[0].locName);
-                let birdDate = String(birdJson[0].obsDt);
-                const imagedata = "";
+                let birdDate = String(birdJson[0].obsDt)
                 let imageSearch = {
                     method: 'get',
-                    url: `http://en.wikipedia.org/w/api.php?action=query&prop=pageimages&format=json&formatversion=2&piprop=original&titles=${birdName}`,
-                    data: imagedata,};
+                    url: `http://en.wikipedia.org/w/api.php?action=query&prop=pageimages&format=json&formatversion=2&piprop=original&titles=${birdName}`};
                 axios(imageSearch).then((imageresponse) => {
-                    const birdImage = imageresponse.imagedata;
-                    //let birdPic = birdImage[0].original.source;
-                    console.log(birdImage);
+                    console.log(JSON.stringify(imageresponse.data));
                     });
 				{const birdEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
