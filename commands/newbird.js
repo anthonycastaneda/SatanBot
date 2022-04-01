@@ -35,7 +35,7 @@ module.exports = {
                     //const page = json.query
                     // console.log(page.pages[0]);
                     //const obj = page;
-                    console.log(JSON.parse(JSON.stringify(json)));
+                    console.dir(json, { depth: 4 });
                  } );
 				{const birdEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
