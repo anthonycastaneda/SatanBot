@@ -28,10 +28,11 @@ module.exports = {
                 let birdDate = String(birdJson[0].obsDt)
                 let imageSearch = {
                     method: 'get',
-                    url: `http://en.wikipedia.org/w/api.php?action=query&prop=pageimages&format=json&formatversion=2&piprop=original&titles=${birdName}`};
+                    url: `http://en.wikipedia.org/w/api.php?action=query&prop=pageimages&format=json&formatversion=2&piprop=original&titles=${birdName}`,
+                    data: imagedata,};
                 axios(imageSearch).then((imageresponse) => {
-                    const birdImage = imageresponse.data;
-                    let birdPic = birdImage[0].orginal.source;
+                    const birdImage = imageresponse.imagedata;
+                    let birdPic = birdImage[0].original.source;
                     console.log(birdPic);
                     });
 				{const birdEmbed = new MessageEmbed()
