@@ -27,35 +27,16 @@ module.exports = {
                 let birdSci = String(birdJson[0].sciName);
                 let birdLoc = String(birdJson[0].locName);
                 let birdDate = String(birdJson[0].obsDt);
-                  /*let imageSearch = {
-                  method: "get",
-                  url: `https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&prop=pageimages&piprop=original&titles=${birdName}`,
-                  data: data
-                };*/
                 wiki().page(`${birdName}`).then((page) =>
-                    {let birdImage = page.mainImage()
-                    console.log(birdImage);});
-                wiki()
-                  .page(`${birdName}`)
-                  .then((page) => 
-                    page.summary()).then(console.log);
-
-
-               /*axios(imageSearch).then((imageresponse) => {
-                  let birdImage = imageresponse.data
-                  let birdimgStr = String(birdImage);
-                  //const page = json.query
-                  // console.log(page.pages[0]);
-                  //const obj = page;
-                  console.log(birdimgStr);
-                });*/
-				{const birdEmbed = new MessageEmbed()
+                {let birdImage = page.mainImage()
+                {const birdEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
 					.setTitle('The Most Recent Walker County Bird')
 					.setDescription(`**Common Name**:  ${birdName}\n**Scientific Name**:  ${birdSci}\n**Location**:  ${birdLoc}\n**Date**:  ${birdDate}`)
                     .setImage(`${birdImage}`);
 				return interaction.editReply({ embeds: [birdEmbed] });
 				}
+            
 
 			})
 			.catch((error) => {
@@ -63,5 +44,7 @@ module.exports = {
 			},
 			);
 
-	},
-};
+    	}
+    )
+  },
+}
