@@ -35,7 +35,7 @@ module.exports = {
 
                 var params = {
                   action: "query",
-                  prop: "images",
+                  prop: "pageimages",
                   titles: `${birdName}`,
                   format: "json",
                 };
