@@ -35,7 +35,7 @@ module.exports = {
               (async () => {
                 try {
                   const page = await wiki.page(`${birdName}`);
-                  console.log(page.originalImage.source);
+                  console.log(page.ImageResult.url);
                   //Response of type @Page object
                   const summaryThroughPage = await page.summary();
                   console.log(summaryThroughPage);
