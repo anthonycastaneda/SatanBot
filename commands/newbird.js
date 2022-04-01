@@ -22,8 +22,11 @@ module.exports = {
 		axios(config)
 			.then((response) => {
 				const birdJson = response.data;
-                // console.log(birdJson[0].comName);
-				const birdString = JSON.stringify(birdJson[0].comName,birdJson[0].sciName,birdJson[0].locName)
+                let birdName = birdJson[0].comName;
+                let birdSci = birdJson[0].sciName;
+                let birdLoc = birdJson[0].locName;
+                let birdFacts = (birdName,birdSci,birdLoc);
+				const birdString = JSON.stringify(birdFacts);
 				console.log(birdString);
 				{const birdEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
