@@ -32,10 +32,9 @@ module.exports = {
                   url: `https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&prop=pageimages&piprop=original&titles=${birdName}`,
                   data: data
                 };*/
-                wiki()
-                  .page(`${birdName}`)
-                  .then((page) =>
-                    page.mainImage()).then(console.log);
+                wiki().page(`${birdName}`).then((page) =>
+                    {let birdImage = page.mainImage()
+                    console.log(birdImage);});
                 wiki()
                   .page(`${birdName}`)
                   .then((page) => 
@@ -53,7 +52,8 @@ module.exports = {
 				{const birdEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
 					.setTitle('The Most Recent Walker County Bird')
-					.setDescription(`**Common Name**:  ${birdName}\n**Scientific Name**:  ${birdSci}\n**Location**:  ${birdLoc}\n**Date**:  ${birdDate}`);
+					.setDescription(`**Common Name**:  ${birdName}\n**Scientific Name**:  ${birdSci}\n**Location**:  ${birdLoc}\n**Date**:  ${birdDate}`)
+                    .setImage('`${birdImage}`');
 				return interaction.editReply({ embeds: [birdEmbed] });
 				}
 
