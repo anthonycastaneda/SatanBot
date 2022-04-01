@@ -34,7 +34,10 @@ module.exports = {
 
                 axios(configImage)
                   .then((response) => {
-                    console.log(response.query);
+                    let jsonImage = response.data;
+                    console.log(jsonImage);
+                    let pageImage = jsonImage.pages;
+                    console.log(pageImage);
                   })
                   .catch((error) => {
                     console.log(error);
