@@ -22,15 +22,15 @@ module.exports = {
 		axios(config)
 			.then((response) => {
 				const birdJson = response.data;
-                let birdName = JSON.stringify(birdJson[0].comName);
-                let birdSci = birdJson[0].sciName;
-                let birdLoc = birdJson[0].locName;
-                const birdFacts = birdName.concat(' ',birdSci,birdLoc);
+                let birdName = String(birdJson[0].comName);
+                let birdSci = String(birdJson[0].sciName);
+                let birdLoc = String(birdJson[0].locName);
+               //  const birdFacts = (birdName,birdSci,birdLoc);
 				console.log(birdFacts);
 				{const birdEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
 					.setTitle('The Most Recent Walker County Bird')
-					.setDescription(birdFacts);
+					.setDescription(`Common Name: ${birdName}\nScientific Name: ${birdSci}\nLocation: ${birdLoc}`);
 				return interaction.editReply({ embeds: [birdEmbed] });
 				}
 
