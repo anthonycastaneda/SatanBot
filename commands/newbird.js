@@ -21,13 +21,13 @@ module.exports = {
 		await interaction.deferReply();
 		axios(config)
 			.then((response) => {
-				response.data;
-				
-				console.log(response.data);
+				const birdJson = response.data;
+				const birdString = JSON.stringify(birdJson)
+				console.log(birdString);
 				{const birdEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
 					.setTitle('The Most Recent Walker County Bird')
-					.setDescription(response.data.comName,response.data.locName);
+					.setDescription(birdString);
 				return interaction.editReply({ embeds: [birdEmbed] });
 				}
 
