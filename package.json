@@ -31,6 +31,7 @@
     "node-fetch": "^2.6.7",
     "require-text": "^0.0.1",
     "undici": "^4.16.0",
+    "wikipedia": "^1.1.8",
     "xhr": "^2.6.0",
     "xmlhttprequest": "^1.8.0"
   },
