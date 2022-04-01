@@ -27,11 +27,19 @@ module.exports = {
                 let birdLoc = String(birdJson[0].locName);
                 let birdDate = String(birdJson[0].obsDt);
                 // Image Portion
-               wiki()
-                 .page(`${birdName}`)
-                 .then((page) => page.mainImage())
-                 .then((mainImage) => console.log(typeof mainImage))
-                 .catch((err) => console.log(err))
+                let configImage = {
+                  method: "get",
+                  url: `https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&prop=pageimages&piprop=original&titles=${birdName}`,
+                };
+
+                axios(configImage)
+                  .then((response) => {
+                    console.log(JSON.stringify(response.query.pages));
+                  })
+                  .catch((error) => {
+                    console.log(error);
+                  });
+
                 
                       const birdEmbed = new MessageEmbed()
                         .setColor("0xd22b2b")
@@ -39,7 +47,7 @@ module.exports = {
                         .setDescription(
                           `**Common Name**:  ${birdName}\n**Scientific Name**:  ${birdSci}\n**Location**:  ${birdLoc}\n**Date**:  ${birdDate}`
                         )
-                        .setImage(`${mainImage}`);
+                        //.setImage(`${mainImage}`);
                       return interaction.editReply({ embeds: [birdEmbed] });
                     
                   })
