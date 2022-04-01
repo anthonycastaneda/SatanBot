@@ -52,8 +52,8 @@ module.exports = {
                   .then(function (response) {
                     var pages = response.query.pages;
                     for (var page in pages) {
-                      for (var img of pages[page].images) {
-                        console.log(img.title);
+                      for (var img of pages[page].original) {
+                        console.log(img.source);
                       }
                     }
                   })
