@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
-const wiki = require('wikipedia');
+const wiki = require('wikijs').default;
 const axios = require('axios');
 const { Page } = require('wikipedia');
 const data = '';
@@ -32,20 +32,12 @@ module.exports = {
                   url: `https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&prop=pageimages&piprop=original&titles=${birdName}`,
                   data: data
                 };*/
-              (async () => {
-                try {
-                  const page = await wiki.page(`${birdName}`);
-                  console.log(page.images);
-                  //Response of type @Page object
-                  const summaryThroughPage = await page.summary();
-                  console.log(summaryThroughPage.originalImage);
-                  // summaryThroughPage = summaryWithoutPage
-                  //Response of type @wikiSummary - contains the intro and the main image
-                } catch (error) {
-                  console.log(error);
-                  //=> Typeof wikiError
-                }
-              })();
+                wiki()
+                  .page(`${birdName}`)
+                  .then((page) =>
+                    page.chain().summary().image().request()
+                  );
+                
 
 
                /*axios(imageSearch).then((imageresponse) => {
