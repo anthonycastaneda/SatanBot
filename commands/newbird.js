@@ -47,13 +47,14 @@ module.exports = {
 
                 fetch(url)
                   .then(function (response) {
+                    console.log(response.query.pages[0].original.source);
                     return response.json();
                   })
                   .then(function (response) {
                     var pages = response.query.pages;
                     for (var page in pages) {
-                      for (var img of pages[page].images) {
-                        console.log(img.source);
+                      for (var img of pages[page]) {
+                        //console.log(img.source);
                       }
                     }
                   })
