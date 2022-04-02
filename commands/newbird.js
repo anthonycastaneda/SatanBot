@@ -1,8 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
-const gse = require("general-search-engine");
 const axios = require('axios');
-const { inspect } = require("util");
 const data = '';
 const config = {
 	method: 'get',
@@ -28,17 +26,23 @@ module.exports = {
                 let birdLoc = String(birdJson[0].locName);
                 let birdDate = String(birdJson[0].obsDt);
                 // Image Portion
-                async function main() {
-                  let petition = await new gse.search()
-                    .setType("image")
-                    .setQuery(`${birdName}`)
-                    .run();
+                let imageReq = {
+                  method: "get",
+                  url: `https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&prop=pageimages&piprop=original&titles=${birdName}`,
+                  headers: {
+                    Cookie:
+                      "GeoIP=US:TX:Huntsville:30.65:-95.58:v4",
+                            },
+                        };
+                axios(imageReq)
+                  .then((resImage) => {
+                    let imagePath = String(resImage.data);
+                    console.log(imagePath);
+                  })
+                  .catch((error) => {
+                    console.log(error);
+                  });
 
-                  console.log(petition);
-                }
-
-                main();
-                
                       const birdEmbed = new MessageEmbed()
                         .setColor("0xd22b2b")
                         .setTitle("The Most Recent Walker County Bird")
