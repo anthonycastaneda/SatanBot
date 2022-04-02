@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require("@discordjs/builders");
+const { link } = require("fs");
 const { XMLHttpRequest } = require("w3c-xmlhttprequest");
 
 module.exports = {
@@ -14,9 +15,10 @@ module.exports = {
     let feed = await parser.parseURL('https://garfieldminusgarfield.net/rss');
     let linkArray = []
     feed.items.forEach(item => {
-    linkArray = (item.link)})
-    const random = linkArray[Math.floor(Math.random() * linkArray.length)];
+    linkArray = (item.link)});
     console.log(linkArray);
+    const random = [Math.floor(Math.random() * linkArray.length)];
+    console.log(linkArray[random]);
     })
     ();
     }
