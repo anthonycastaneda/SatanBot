@@ -9,7 +9,7 @@ var config = {
 };
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName("elephant")
+    .setName("wip-elephant")
     .setDescription("Baby Elephant Gifs"),
   async execute(interaction) {
     await interaction.deferReply();
