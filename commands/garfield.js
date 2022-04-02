@@ -13,7 +13,7 @@ module.exports = {
 
     (async () => {
     let feed = await parser.parseURL('https://garfieldminusgarfield.net/rss');
-    let linkArray = []
+    let linkArray = (20)
     feed.items.forEach(item => {
     linkArray = (item.link)});
     console.log(linkArray);
