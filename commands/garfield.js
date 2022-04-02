@@ -12,11 +12,11 @@ module.exports = {
     let parser = new Parser();
 
     (async () => {
-    let urls = '';
+    
     let feed = await parser.parseURL('https://garfieldminusgarfield.net/rss');
-    feed.items.forEach((item) => {
-    let links = urls.map(item.link);
-    console.log(links);
+    feed.items.forEach(item => {
+    let urls = (item.title + ':' + item.link);
+    console.log(urls, typeof urls);
     //const random = [Math.floor(Math.random() * linkArray.length)];
     //console.log(linkArray[random]);
     })})
