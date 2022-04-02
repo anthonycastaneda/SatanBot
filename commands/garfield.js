@@ -16,7 +16,7 @@ module.exports = {
     feed.items.forEach(item => {
     linkArray = (item.link)})
     const random = linkArray[Math.floor(Math.random() * linkArray.length)];
-    console.log(random, linkArray[random]);
+    console.log(linkArray);
     })
     ();
     }
