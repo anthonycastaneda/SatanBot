@@ -1,9 +1,7 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
 const axios = require('axios');
-const wtf = require('wtf_wikipedia');
-wtf.extend(require('wtf-plugin-api'));
-wtf.extend(require('wtf-plugin-image'))
+
 const data = '';
 const config = {
 	method: 'get',
@@ -29,8 +27,10 @@ module.exports = {
                 let birdLoc = String(birdJson[0].locName);
                 let birdDate = String(birdJson[0].obsDt);
                 // Image Portion
-                
-                const doc =  wtf.fetch(`${birdName}`)
+                const wtf = require("wtf_wikipedia");
+                wtf.extend(require("wtf-plugin-api"));
+                wtf.extend(require("wtf-plugin-image"));
+                const doc =  wtf.fetch (`${birdName}`);
                 console.log(doc);
                 const img = doc.images()[0].json();
                 console.log(img);
