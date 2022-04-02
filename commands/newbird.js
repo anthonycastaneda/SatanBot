@@ -27,34 +27,10 @@ module.exports = {
                 let birdLoc = String(birdJson[0].locName);
                 let birdDate = String(birdJson[0].obsDt);
                 // Image Portion
-                let imageReq = {
-                  method: "get",
-                  url: `https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&prop=pageimages&piprop=original&titles=${birdName}`,
-                  headers: {
-                    Cookie:
-                      "GeoIP=US:TX:Huntsville:30.65:-95.58:v4",
-                            },
-                        };
-                axios(imageReq)
-                  .then((resImage) => {
-                    let imagePath = resImage.data;
-                    console.log(imagePath.query);
-                      const fields = ["query__pages__original__source"];
-                      const opts = { fields };
-                      const csv = parse(imagePath.query, opts);
-                      console
-                        .log(csv)
-                        .catch((err) => {
-                          console.log(err);
-                        })
-                        .catch((error) => {
-                          console.log(error);
-                        });
-                  
-
-              
-
-                      const birdEmbed = new MessageEmbed()
+                
+                
+                
+                const birdEmbed = new MessageEmbed()
                         .setColor("0xd22b2b")
                         .setTitle("The Most Recent Walker County Bird")
                         .setDescription(
@@ -71,5 +47,4 @@ module.exports = {
                     console.log(error);
                   })
                 },
-            )},
-};
+            };
