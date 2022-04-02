@@ -12,6 +12,7 @@ module.exports = {
     let parser = new Parser();
 
     (async () => {
+    let urls = '';
     let feed = await parser.parseURL('https://garfieldminusgarfield.net/rss');
     feed.items.forEach((item) => {
     let links = urls.map(item.link);
