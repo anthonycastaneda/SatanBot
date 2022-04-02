@@ -11,19 +11,15 @@ module.exports = {
     let parser = new Parser();
 
     (async () => {
-
     let feed = await parser.parseURL('https://garfieldminusgarfield.net/rss');
     feed.items.forEach(item => {
-    let myArray = (item.link)
-    console.log(myArray)}
-    );
-    const random = array[Math.floor(Math.random() * myArray.length)];
+    var myArray = (item.link)
+    const random = myArray[Math.floor(Math.random() * myArray.length)];
     console.log(random, myArray[random]);
-    
-   
-
-    })();
-    
+    })
+    ();
+    }
+    );
     
     /*
       const garfieldEmbed = new MessageEmbed()
