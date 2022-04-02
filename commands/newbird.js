@@ -39,18 +39,20 @@ module.exports = {
                   .then((resImage) => {
                     let imagePath = resImage.data;
                     console.log(imagePath.query);
-                  })
-                  .catch((error) => {
-                    console.log(error);
-                  });
+                      const fields = ["query__pages__original__source"];
+                      const opts = { fields };
+                      const csv = parse(imagePath.query, opts);
+                      console
+                        .log(csv)
+                        .catch((err) => {
+                          console.log(err);
+                        })
+                        .catch((error) => {
+                          console.log(error);
+                        });
                   
 
-                const fields = ['query__pages__original__source'];
-                const opts = { fields };
-                const csv = parse(imagePath.query, opts);
-                console.log(csv)
-                .catch((err) => {
-                    console.log(err);
+              
 
                       const birdEmbed = new MessageEmbed()
                         .setColor("0xd22b2b")
