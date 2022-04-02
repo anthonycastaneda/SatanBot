@@ -24,7 +24,7 @@ module.exports = {
       const res = this.responseText;
       const jsonParsed = JSON.parse(res);
       const imgUrl = jsonParsed.response.posts[0].body;
-      console.log(imgUrl);
+      console.log(jsonParsed);
       };/*
       const garfieldEmbed = new MessageEmbed()
         .setColor("0xd22b2b")
