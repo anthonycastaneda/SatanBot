@@ -34,6 +34,9 @@ module.exports = {
                 img = doc.images()[0].json();
                 console.log(img);
 
+                
+                
+                
                 const birdEmbed = new MessageEmbed()
                         .setColor("0xd22b2b")
                         .setTitle("The Most Recent Walker County Bird")
