@@ -2,6 +2,8 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
 const axios = require('axios');
 const wtf = require('wtf_wikipedia');
+wtf.extend(require('wtf-plugin-api'));
+wtf.extend(require('wtf-plugin-image'))
 const data = '';
 const config = {
 	method: 'get',
@@ -30,7 +32,7 @@ module.exports = {
                 let doc = await wtf.fetch(`${birdName}`)
                 img = doc.images()[0].json()
                 console.log(img);
-                
+
                 const birdEmbed = new MessageEmbed()
                         .setColor("0xd22b2b")
                         .setTitle("The Most Recent Walker County Bird")
