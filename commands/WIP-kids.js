@@ -9,7 +9,7 @@ var config = {
 };
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName("kid")
+    .setName("wip-kid")
     .setDescription("Kids Falling Over"),
   async execute(interaction) {
     await interaction.deferReply();
