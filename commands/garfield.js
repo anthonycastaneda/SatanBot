@@ -7,25 +7,22 @@ module.exports = {
     .setDescription("Garfield Minus Garfield"),
   async execute(interaction) {
     await interaction.deferReply();
-    const { XMLHttpRequest } = require("w3c-xmlhttprequest");
-    var xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
-    xhr.open(
-      "GET",
-      "https://api.tumblr.com/v2//blog/garfieldminusgarfield.net/posts/photo?api_key=heKYYFruxqrT0yDkMA1zK48FeWDm6AeMQs9IVFX2cFBtpJvVTq&tag=garfield%2520minus%2520garfield&limit=1"
-    );
-    xhr.setRequestHeader(
-      "heKYYFruxqrT0yDkMA1zK48FeWDm6AeMQs9IVFX2cFBtpJvVTq",
-      "1p4ecc5n5WdeoAzXErOpd36VFftBuZtgfbC0gmFDRIpm9i8Ar6"
-    );
-    xhr.send();
-    xhr.addEventListener("readystatechange", function () {
-      if (this.readyState === 4) {
-      const res = this.responseText;
-      const jsonParsed = JSON.stringify(res);
-      const imgUrl = jsonParsed.response.posts[0].body;
-      console.log(imgUrl);
-      };/*
+    let Parser = require('rss-parser');
+    let parser = new Parser();
+
+    (async () => {
+
+    let feed = await parser.parseURL('https://garfieldminusgarfield.net/rss');
+    console.log(feed.title);
+
+    feed.items.forEach(item => {
+   console.log(item.title + ':' + item.link)
+    });
+
+    })();
+    
+    
+    /*
       const garfieldEmbed = new MessageEmbed()
         .setColor("0xd22b2b")
         .setTitle("Garfield Minus Garfield")
@@ -34,6 +31,5 @@ module.exports = {
         );
       //.setImage(`${imgUrl}`);
       return interaction.editReply({ embeds: [garfieldEmbed] });*/
-    });
-  },
-};
+    },
+  };
