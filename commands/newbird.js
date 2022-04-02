@@ -36,7 +36,7 @@ module.exports = {
                         };
                 axios(imageReq)
                   .then((resImage) => {
-                    let imagePath = String(resImage.data);
+                    let imagePath = resImage.data;
                     console.log(imagePath);
                   })
                   .catch((error) => {
