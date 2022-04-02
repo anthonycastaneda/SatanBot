@@ -29,8 +29,9 @@ module.exports = {
                 let birdLoc = String(birdJson[0].locName);
                 let birdDate = String(birdJson[0].obsDt);
                 // Image Portion
-                let doc = await wtf.fetch(`${birdName}`)
-                img = doc.images()[0].json()
+                let doc = await wtf.fetch(`${birdName}`);
+                console.log(doc);
+                img = doc.images()[0].json();
                 console.log(img);
 
                 const birdEmbed = new MessageEmbed()
