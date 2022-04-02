@@ -16,7 +16,7 @@ module.exports = {
     console.log(feed.title);
 
     feed.items.forEach(item => {
-   console.log(item.title + ':' + item.link)
+   console.log(item.link)
     });
 
     })();
