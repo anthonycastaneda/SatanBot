@@ -52,7 +52,7 @@ module.exports = {
                        .setColor("0xd22b2b")
                        .setTitle("The Most Recent Walker County Bird")
                        .setDescription(
-                         `**Common Name**:  ${birdName}\n**Scientific Name**:  ${birdSci}\n**Location**:  ${birdLoc}\n**Date**:  ${birdDate}`
+                         `**Common Name**:  ${birdName}\n**Scientific Name**:  ${birdSci}\n**Location**:  ${birdLoc}\n**Date**:  ${birdDate}\n*reported on eBird.org*`
                        )
                        .setImage(`${imgUrl}`);
                      return interaction.editReply({ embeds: [birdEmbed] });
