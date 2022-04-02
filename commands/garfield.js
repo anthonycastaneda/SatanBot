@@ -21,7 +21,8 @@ module.exports = {
     xhr.send();
     xhr.addEventListener("readystatechange", function () {
       if (this.readyState === 4) {
-        console.log(this.responseText);
+      const res = this.responseText;
+      console.log(typeof res);
       };/*
       const garfieldEmbed = new MessageEmbed()
         .setColor("0xd22b2b")
