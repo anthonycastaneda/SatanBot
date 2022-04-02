@@ -22,9 +22,9 @@ module.exports = {
     xhr.addEventListener("readystatechange", function () {
       if (this.readyState === 4) {
       const res = this.responseText;
-      const jsonParsed = JSON.parse(res);
-      const imgUrl = jsonParsed.response;
-      console.log(jsonParsed);
+      const jsonParsed = JSON.stringify(res);
+      const imgUrl = jsonParsed.response.posts[0].body;
+      console.log(imgUrl);
       };/*
       const garfieldEmbed = new MessageEmbed()
         .setColor("0xd22b2b")
