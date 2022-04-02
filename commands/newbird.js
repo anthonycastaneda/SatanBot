@@ -32,8 +32,10 @@ module.exports = {
                 wtf.extend(require("wtf-plugin-image"));
                 const doc =  wtf.fetch (`${birdName}`);
                 console.log(doc);
-                const img = doc.images()[0].json();
-                console.log(img);
+                const docImage = await wtf.fetch('Black Vulture');
+                let img = docImage.mainImage();
+                console.log(img.src());
+                
 
                 
                 
@@ -44,7 +46,7 @@ module.exports = {
                         .setDescription(
                           `**Common Name**:  ${birdName}\n**Scientific Name**:  ${birdSci}\n**Location**:  ${birdLoc}\n**Date**:  ${birdDate}`
                         )
-                        .setImage(`${img.url}`);
+                        .setImage(`${img.src()}`);
                       return interaction.editReply({ embeds: [birdEmbed] });
                     
                   })
