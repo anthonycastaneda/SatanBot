@@ -35,6 +35,7 @@
     "undici": "^4.16.0",
     "wikijs": "^6.3.3",
     "wikipedia": "^1.1.8",
+    "wtf_wikipedia": "^9.1.0",
     "xhr": "^2.6.0",
     "xmlhttprequest": "^1.8.0"
   },

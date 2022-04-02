@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
 const axios = require('axios');
-const { parse } = require('json2csv');
+const wtf = require('wtf_wikipedia');
 const data = '';
 const config = {
 	method: 'get',
@@ -27,8 +27,9 @@ module.exports = {
                 let birdLoc = String(birdJson[0].locName);
                 let birdDate = String(birdJson[0].obsDt);
                 // Image Portion
-                
-                
+                let doc = await wtf.fetch(`${birdName}`)
+                img = doc.images()[0].json()
+                console.log(img);
                 
                 const birdEmbed = new MessageEmbed()
                         .setColor("0xd22b2b")
