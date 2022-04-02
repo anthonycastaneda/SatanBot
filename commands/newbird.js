@@ -1,6 +1,7 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
 const axios = require('axios');
+const { parse } = require('json2csv');
 const data = '';
 const config = {
 	method: 'get',
@@ -37,11 +38,19 @@ module.exports = {
                 axios(imageReq)
                   .then((resImage) => {
                     let imagePath = resImage.data;
-                    console.log(imagePath.query.pages[1].source);
+                    console.log(imagePath.query);
                   })
                   .catch((error) => {
                     console.log(error);
                   });
+                  
+
+                const fields = ['query__pages__original__source'];
+                const opts = { fields };
+                const csv = parse(imagePath.query, opts);
+                console.log(csv)
+                .catch((err) => {
+                    console.log(err);
 
                       const birdEmbed = new MessageEmbed()
                         .setColor("0xd22b2b")
@@ -58,8 +67,7 @@ module.exports = {
                   })
                   .catch((error) => {
                     console.log(error);
-                  });
-
-    	}
-    
-  };
+                  })
+                },
+            )},
+};
