@@ -29,9 +29,10 @@ module.exports = {
                 let birdLoc = String(birdJson[0].locName);
                 let birdDate = String(birdJson[0].obsDt);
                 // Image Portion
-                let doc = await wtf.fetch(`${birdName}`);
+                
+                const doc =  wtf.fetch(`${birdName}`)
                 console.log(doc);
-                img = doc.images()[0].json();
+                const img = doc.images()[0].json();
                 console.log(img);
 
                 
@@ -43,7 +44,7 @@ module.exports = {
                         .setDescription(
                           `**Common Name**:  ${birdName}\n**Scientific Name**:  ${birdSci}\n**Location**:  ${birdLoc}\n**Date**:  ${birdDate}`
                         )
-                        //.setImage(`${mainImage}`);
+                        .setImage(`${img.url}`);
                       return interaction.editReply({ embeds: [birdEmbed] });
                     
                   })
