@@ -12,14 +12,14 @@ module.exports = {
 
     (async () => {
     let feed = await parser.parseURL('https://garfieldminusgarfield.net/rss');
+    let linkArray = []
     feed.items.forEach(item => {
-    var myArray = (item.link)
-    const random = myArray[Math.floor(Math.random() * myArray.length)];
-    console.log(random, myArray[random]);
+    linkArray = (item.link)})
+    const random = linkArray[Math.floor(Math.random() * linkArray.length)];
+    console.log(random, linkArray[random]);
     })
     ();
     }
-    );
     
     /*
       const garfieldEmbed = new MessageEmbed()
@@ -30,5 +30,4 @@ module.exports = {
         );
       //.setImage(`${imgUrl}`);
       return interaction.editReply({ embeds: [garfieldEmbed] });*/
-    },
-  };
+    };
