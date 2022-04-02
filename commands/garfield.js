@@ -23,7 +23,7 @@ module.exports = {
       if (this.readyState === 4) {
       const res = this.responseText;
       const jsonParsed = JSON.parse(res);
-      const imgUrl = jsonParsed.response.posts;
+      const imgUrl = jsonParsed.response.posts[0].body;
       console.log(imgUrl);
       };/*
       const garfieldEmbed = new MessageEmbed()
