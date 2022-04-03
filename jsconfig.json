@@ -4,7 +4,7 @@
         "moduleResolution": "Node",
         "target": "ES6",
         "jsx": "preserve",
-        "checkJs": true,
+        "checkJs": false,
         "strictFunctionTypes": true
     },
     "exclude": [
