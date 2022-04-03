@@ -25,6 +25,7 @@
     "enmap": "^5.8.8",
     "express": "~4.16.1",
     "fs": "^0.0.1-security",
+    "futil-js": "^1.69.0",
     "general-search-engine": "^1.4.1",
     "http-errors": "~1.6.3",
     "json-to-pretty-yaml": "^1.2.2",
