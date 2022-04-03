@@ -15,15 +15,11 @@ module.exports = {
     const page = await fetch(url)
     const body = await page.text()
     //console.log(body);
-    var HTMLParser = require("node-html-parser");
-    var root = HTMLParser.parse(body);
-    
-    console.log(root.querySelector(".img-fluid lazyloaded"));
-    //const cheerio = require("cheerio");
-    //const $ = cheerio.load(body)
+    const cheerio = require("cheerio");
+    const $ = cheerio.load(body)
       //get the picture
-    //let pictureUrl = $('.item-comic-image img').attr('src');
-    //console.log($);
+    let pictureUrl = $('.item-comic-image img').attr('src');
+    console.log($);
         }    
           /*{const hobbesEmbed = new MessageEmbed()
           .setColor("0xd22b2b")
