@@ -15,8 +15,8 @@ module.exports = {
     
     let feed = await parser.parseURL('https://garfieldminusgarfield.net/rss');
     feed.items.forEach(item => {
-    let desc = (item.description);
-    console.log(desc);
+    console.log(item.description);
+    
     //const random = [Math.floor(Math.random() * linkArray.length)];
     //console.log(linkArray[random]);
     })})
