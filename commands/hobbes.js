@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require("@discordjs/builders");
 const { MessageEmbed } = require("discord.js");
-const request = require("request");
-const cheerio = require("cheerio");
+const fetch = require('node-fetch');
+const { cheerio } = require("cheerio");
 
 
 module.exports = {
@@ -9,13 +9,13 @@ module.exports = {
 	.setName('hobbes')
 	.setDescription('Get a Calvin and Hobbes Comic'),
 	async execute(interaction) {
-    await interaction.deferReply();
-    function sendImage(date, id) {
+    await interaction.deferReply();{
+    
     let year = date.getFullYear();
     let month = date.getMonth() + 1;
     let day = date.getDate();
     //load the page
-    request(
+    await fetch(
     {
       uri:
         "http://www.gocomics.com/calvinandhobbes/" +
@@ -24,15 +24,14 @@ module.exports = {
         month +
         "/" +
         day,
-    },
-    function (error, response, body) {
+    },).then(response => response.json());
+    function parseHtml(_error, _response, body) {
       let $ = cheerio.load(body);
       //get the picture
-      let pictureUrl = $(".item-comic-image img").attr("src");
+      let pictureUrl = $('.item-comic-image img').attr('src');
       console.log(pictureUrl);
-      return pictureUrl
         }
-    );
+    
           /*{const hobbesEmbed = new MessageEmbed()
           .setColor("0xd22b2b")
           .setTitle("Hobbes")
@@ -40,5 +39,5 @@ module.exports = {
 		  return interaction.editReply({ embeds: [hobbesEmbed] });
 		  }*/
     }
-},
+}
 }
