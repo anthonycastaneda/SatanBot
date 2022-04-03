@@ -13,20 +13,21 @@ module.exports = {
     let Parser = require('rss-parser');
     let parser = new Parser();
 
-    (async () => {
+    async () => {
     
     let feed = await parser.parseURL('https://garfieldminusgarfield.net/rss');
     feed.items.forEach(item => {
     let regex = /<img.*?src="(.*?)"/;
     let src = regex.exec(item.content)[1];   
-    for (var entry of src.entries()) {
-      console.log(entry);
-    }
+    const strCopy = src.split();
+    console.log(strCopy, Array.isArray(strCopy));
+    },
     //const random = [Math.floor(Math.random() * linkArray.length)];
     //console.log(linkArray[random]);
-    })})
-    ();
-    }
+   // },
+    (src), 
+    )
+    
     
     /*
       const garfieldEmbed = new MessageEmbed()
@@ -37,4 +38,4 @@ module.exports = {
         );
       //.setImage(`${imgUrl}`);
       return interaction.editReply({ embeds: [garfieldEmbed] });*/
-    };
+    }}}
