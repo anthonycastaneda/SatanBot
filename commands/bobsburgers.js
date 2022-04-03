@@ -17,7 +17,10 @@ module.exports = {
 		await fetch(url)
         .then((result) => result.json())
         .then((output) => {
-         console.log(output);
+         const outputJson = (output)
+         const burger = outputJson.burgers
+         const epTitle = outputJson.episodeName
+         console.log(burger,epTitle)
           })
           .catch((err) => console.error(err));
                 
