@@ -13,6 +13,8 @@ module.exports = {
         const prop = entries[Math.floor(Math.random() * entries.length)];
         for (const [key, value] of Object.entries(prop)) {
         console.log(`${key}: ${value}`);
+        }
+        /*
         {
 		  {const flagEmbed = new MessageEmbed()
           .setColor("0xd22b2b")
@@ -21,8 +23,7 @@ module.exports = {
           .setDescription(`${value}`);
 		  return interaction.editReply({ embeds: [flagEmbed] });
 		  }
-		}
+		}*/
 			
 	}
  }
-}
