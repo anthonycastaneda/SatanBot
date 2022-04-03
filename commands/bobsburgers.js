@@ -15,9 +15,10 @@ module.exports = {
         console.log(rndInt)
         const url = `https://bobsburgers-api.herokuapp.com/burgerOfTheDay/${rndInt}`;
 		await fetch(url)
-			.then((response) => {
-				const burgerResponse = response.data
-                console.log(burgerResponse)
+			    .then(result => result.json())
+                .then((output) => {
+                console.log('Output: ', output);
+                }).catch(err => console.error(err))
 				/*{const burgerEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
 					.setTitle('You are a Good Boy')
@@ -26,9 +27,9 @@ module.exports = {
 				return interaction.editReply({ embeds: [burgerEmbed] });
 				}*/
 			},
-			);
-	},
-};
+			
+	};
+
 
 
 
