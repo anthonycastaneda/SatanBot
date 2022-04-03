@@ -14,7 +14,8 @@ module.exports = {
     let url =  ('http://www.gocomics.com/calvinandhobbes/' + dateUrl + "/")
     console.log(url);
     //load the page
-    await fetch(url).then(response => response.json());
+    await fetch(url).then(res => res.text())
+    .then(text => console.log(text));
     function parseHtml(_error, _response, body) {
       let $ = cheerio.load(body);
       //get the picture
