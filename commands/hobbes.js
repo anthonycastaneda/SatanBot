@@ -12,14 +12,14 @@ module.exports = {
     var dateUrl = new Date().toLocaleDateString('en-ZA')
     let url =  ('http://www.gocomics.com/calvinandhobbes/' + dateUrl + "/")
     //load the page
-    const res = await fetch(url)
-    const body = await res.text()
-    console.log(Object.getOwnPropertyNames(body),typeof body);
+    const page = await fetch(url)
+    const body = await page.text()
+    console.log(body);
     //const cheerio = require("cheerio");
     //const $ = cheerio.load(body)
       //get the picture
     //let pictureUrl = $('.item-comic-image img').attr('src');
-    console.log($);
+    //console.log($);
         }    
           /*{const hobbesEmbed = new MessageEmbed()
           .setColor("0xd22b2b")
