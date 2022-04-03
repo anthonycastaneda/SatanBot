@@ -14,7 +14,10 @@ module.exports = {
     //load the page
     const page = await fetch(url)
     const body = await page.text()
-    console.log(body);
+    //console.log(body);
+    var HTMLParser = require("node-html-parser");
+    var root = HTMLParser.parse(body);
+    console.log(root);
     //const cheerio = require("cheerio");
     //const $ = cheerio.load(body)
       //get the picture

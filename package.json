@@ -35,6 +35,7 @@
     "lodash.sample": "^4.2.1",
     "morgan": "~1.9.1",
     "node-fetch": "^2.6.7",
+    "node-html-parser": "^5.3.3",
     "request": "^2.88.2",
     "require-text": "^0.0.1",
     "rss-parser": "^3.12.0",
