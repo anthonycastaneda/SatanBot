@@ -2,7 +2,6 @@ const { SlashCommandBuilder } = require("@discordjs/builders");
 const { MessageEmbed } = require("discord.js");
 const fetch = require('node-fetch');
 const { cheerio } = require("cheerio");
-const date = new Date();
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -11,21 +10,16 @@ module.exports = {
 	async execute(interaction) {
     await interaction.deferReply();{
     
-    let year = date.getFullYear();
-    let month = date.getMonth() + 1;
-    let day = date.getDate();
+    var d = new Date(date);
+    date = [
+    d.getFullYear(),
+    ('0' + (d.getMonth() + 1)).slice(-2),
+    ('0' + d.getDate()).slice(-2)
+    ].join('/');
+    let url =  ('http://www.gocomics.com/calvinandhobbes/' + date + "/")
+    console.log(url);
     //load the page
-    await fetch(
-    {
-      uri:
-        "http://www.gocomics.com/calvinandhobbes/" +
-        year +
-        "/" +
-        month +
-        "/" +
-        day +
-        "/",
-    },).then(response => response.json());
+    await fetch(url).then(response => response.json());
     function parseHtml(_error, _response, body) {
       let $ = cheerio.load(body);
       //get the picture
