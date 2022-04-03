@@ -8,9 +8,8 @@ module.exports = {
 		.setDescription('Getchu a Flag 🏴‍☠️'),
 	async execute(interaction) {
 		await interaction.deferReply();
-		fetch('https://flagcdn.com/en/codes.json')
-			.then(response => response.json());
-            console.log(response.json);
+		const codes = await fetch('https://flagcdn.com/en/codes.json').then(response => response.json())
+            console.log(codes);
            /* {
 				{const flagEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
