@@ -12,17 +12,16 @@ module.exports = {
         const entries = Object.entries(codes);
         const prop = entries[Math.floor(Math.random() * entries.length)];
         for (const [key, value] of Object.entries(prop)) {
-        console.log(`${key}: ${value}`);
-        }
-           /* {
-				{const flagEmbed = new MessageEmbed()
-					.setColor('0xd22b2b')
-					.setTitle('Flags of the World 🌎')
-					.setImage(`${dogImageResponse}`)
-					.setDescription('');
-				return interaction.editReply({ embeds: [dogEmbed] });
-				}
-			},*/
+        console.log(`${key[0]}: ${value[1]}`);}
+        {
+		  {const flagEmbed = new MessageEmbed()
+          .setColor("0xd22b2b")
+          .setTitle("Flags of the World 🌎")
+          .setImage(`https://flagcdn.com/h120/${key[0]}.png`)
+          .setDescription(`${value[1]}`);
+		  return interaction.editReply({ embeds: [flagEmbed] });
+		  }
+		}
 			
 	},
  };
