@@ -10,13 +10,8 @@ module.exports = {
 	async execute(interaction) {
     await interaction.deferReply();{
     
-    var date = new Date(date)
-    date = [
-    d.getFullYear(),
-    ('0' + (d.getMonth() + 1)).slice(-2),
-    ('0' + d.getDate()).slice(-2)
-    ].join('/')
-    let url =  ('http://www.gocomics.com/calvinandhobbes/' + date + "/")
+    var dateUrl = new Date().toLocaleDateString('en-ZA')
+    let url =  ('http://www.gocomics.com/calvinandhobbes/' + dateUrl + "/")
     console.log(url);
     //load the page
     await fetch(url).then(response => response.json());
