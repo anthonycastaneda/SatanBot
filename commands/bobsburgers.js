@@ -16,8 +16,8 @@ module.exports = {
         const url = `https://bobsburgers-api.herokuapp.com/burgerOfTheDay/${rndInt}`;
 		await fetch(url)
 			.then((response) => {
-				const burgerResponse = response
-                console.log(Object.getOwnPropertyNames(burgerResponse))
+				const burgerResponse = response.body
+                console.log(burgerResponse)
 				/*{const burgerEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
 					.setTitle('You are a Good Boy')
