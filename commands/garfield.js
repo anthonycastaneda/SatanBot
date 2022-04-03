@@ -7,7 +7,7 @@ module.exports = {
     .setName("garfield")
     .setDescription("Garfield Minus Garfield"),
     async execute(interaction) {
-    await interaction.deferReply();
+    await interaction.deferReply();{
     
       const dir = "./static/GnG";
       randomFile(dir, (err, file) => {
@@ -21,6 +21,8 @@ module.exports = {
         .setDescription(
           "This is a journey deep into the mind of an isolated young everyman as he fights a losing battle against loneliness and depression in a quiet American suburb"
         )
-        .setImage(`${file}`);
-      return interaction.editReply({ embeds: [garfieldEmbed] });
-},}
+        .setImage(`${file}`)
+        .setURL('https://garfieldminusgarfield.net');
+      return interaction.editReply({ embeds: [garfieldEmbed] });}
+    },
+}
