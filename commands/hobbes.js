@@ -12,6 +12,7 @@ module.exports = {
     var dateUrl = new Date().toLocaleDateString('en-ZA')
     let url =  ('http://www.gocomics.com/calvinandhobbes/' + dateUrl + "/")
     //load the page
+    // @ts-ignore
     const page = await fetch(url)
     const body = await page.text()
     //console.log(body);
@@ -22,6 +23,7 @@ module.exports = {
     //console.log(pictureUrl);
           
     {const hobbesEmbed = new MessageEmbed()
+    // @ts-ignore
     .setColor("0xd22b2b")
     .setTitle("Today's Calvin and Hobbes")
     .setImage(`${pictureUrl}`);
