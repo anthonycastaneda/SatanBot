@@ -11,11 +11,8 @@ module.exports = {
     
       const dir = "./static/GnG";
       randomFile(dir, (err, file) => {
-        console.log(`The random file is: ${file}`);
-      });
-
-  
-      const garfieldEmbed = new MessageEmbed()
+    
+        const garfieldEmbed = new MessageEmbed()
         .setColor("0xd22b2b")
         .setTitle("Garfield Minus Garfield")
         .setDescription(
@@ -23,6 +20,8 @@ module.exports = {
         )
         .setImage(`${file}`)
         .setURL('https://garfieldminusgarfield.net');
-      return interaction.editReply({ embeds: [garfieldEmbed] });}
-    },
+      return interaction.editReply({ embeds: [garfieldEmbed] });
+        })
+    }
+},
 }
