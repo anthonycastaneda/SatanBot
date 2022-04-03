@@ -15,9 +15,11 @@ module.exports = {
         console.log(rndInt)
         const url = `https://bobsburgers-api.herokuapp.com/burgerOfTheDay/${rndInt}`;
 		await fetch(url)
-			    .then(result => result.json())
-                 const burgerJson = result
-                 console.log(burgerJson);
+        .then((result) => result.json())
+        .then((output) => {
+         console.log(output);
+          })
+          .catch((err) => console.error(err));
                 
 				/*{const burgerEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
