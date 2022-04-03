@@ -16,9 +16,9 @@ module.exports = {
         const url = `https://bobsburgers-api.herokuapp.com/burgerOfTheDay/${rndInt}`;
 		await fetch(url)
 			    .then(result => result.json())
-                .then((output) => {
-                console.log('Output: ', output);
-                }).catch(err => console.error(err))
+                 const burgerJson = result
+                 console.log(burgerJson);
+                
 				/*{const burgerEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
 					.setTitle('You are a Good Boy')
