@@ -15,7 +15,7 @@ module.exports = {
     //load the page
     request({
         method: 'GET',
-        url: `${url}`}, (err, res, body) => {
+        url: `${url}`}, function(err, res, body){
              if (err) return console.log(err);
              let $ = cheerio.load(body);
              //get the picture
@@ -29,6 +29,7 @@ module.exports = {
           .setImage(`${pictureUrl}`);
 		  return interaction.editReply({ embeds: [hobbesEmbed] });
 		  }*/
-    )}
+        )
+}
 }
 }
