@@ -18,7 +18,7 @@ module.exports = {
     var HTMLParser = require("node-html-parser");
     var root = HTMLParser.parse(body);
     
-    console.log(root.querySelector('data-image='));
+    console.log(root.querySelector(".img-fluid lazyloaded"));
     //const cheerio = require("cheerio");
     //const $ = cheerio.load(body)
       //get the picture
