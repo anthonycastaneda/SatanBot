@@ -23,7 +23,8 @@ module.exports = {
         "/" +
         month +
         "/" +
-        day,
+        day +
+        "/",
     },).then(response => response.json());
     function parseHtml(_error, _response, body) {
       let $ = cheerio.load(body);
