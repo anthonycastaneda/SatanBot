@@ -19,7 +19,7 @@ module.exports = {
     const $ = cheerio.load(body)
       //get the picture
     let pictureUrl = $('.item-comic-image img').attr('src');
-    console.log($);
+    console.log(pictureUrl);
         }    
           /*{const hobbesEmbed = new MessageEmbed()
           .setColor("0xd22b2b")
