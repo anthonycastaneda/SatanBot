@@ -12,7 +12,7 @@ module.exports = {
     var dateUrl = new Date().toLocaleDateString('en-ZA')
     let url =  ('http://www.gocomics.com/calvinandhobbes/' + dateUrl + "/")
     //load the page
-    await fetch(url).then(res => res.text())
+    await fetch (url).then(res => res.text())
     .then(text => console.log(text));
     function parseHtml(_error, _response, body) {
       let $ = cheerio.load(body);
