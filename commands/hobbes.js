@@ -17,7 +17,8 @@ module.exports = {
     //console.log(body);
     var HTMLParser = require("node-html-parser");
     var root = HTMLParser.parse(body);
-    console.log(root);
+    
+    console.log(root.querySelector('src'));
     //const cheerio = require("cheerio");
     //const $ = cheerio.load(body)
       //get the picture
