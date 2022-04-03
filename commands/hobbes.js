@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require("@discordjs/builders");
 const { MessageEmbed } = require("discord.js");
 const fetch  = require("node-fetch");
-const { cheerio } = require("cheerio");
+
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -14,8 +14,9 @@ module.exports = {
     //load the page
     const res = await fetch(url)
     const body = await res.text()
-    console.log(body)
-    const $ = cheerio.load(body)
+    console.log(Object.getOwnPropertyNames(body),typeof body);
+    //const cheerio = require("cheerio");
+    //const $ = cheerio.load(body)
       //get the picture
     //let pictureUrl = $('.item-comic-image img').attr('src');
     console.log($);
