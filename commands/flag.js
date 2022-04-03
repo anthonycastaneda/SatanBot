@@ -14,16 +14,16 @@ module.exports = {
         for (const [key, value] of Object.entries(prop)) {
         console.log(prop['0'],prop['1']);
         }
-        /*
+        
         {
 		  {const flagEmbed = new MessageEmbed()
           .setColor("0xd22b2b")
           .setTitle("Flags of the World 🌎")
-          .setImage(`https://flagcdn.com/h120/${key}.png`)
-          .setDescription(`${value}`);
+          .setImage(`https://flagcdn.com/h120/${prop['0']}.png`)
+          .setDescription(`${prop['1']}`);
 		  return interaction.editReply({ embeds: [flagEmbed] });
 		  }
-		}*/
+		}
 			
 	}
  }
