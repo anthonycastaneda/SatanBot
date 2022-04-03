@@ -13,14 +13,15 @@ module.exports = {
     var dateUrl = new Date().toLocaleDateString('en-ZA')
     let url =  ('http://www.gocomics.com/calvinandhobbes/' + dateUrl + "/")
     //load the page
-    await request({
-    method: 'GET',
-    url: `${url}`}, (err, res, body) => {
-      let $ = cheerio.load(body);
-      //get the picture
-      let pictureUrl = $('.item-comic-image img').attr('src');
-      console.log(pictureUrl);
-        }
+    request({
+        method: 'GET',
+        url: `${url}`}, (err, res, body) => {
+             if (err) return console.error(err);
+             let $ = cheerio.load(body);
+             //get the picture
+             let pictureUrl = $('.item-comic-image img').attr('src');
+             console.log(pictureUrl);
+             }
     
           /*{const hobbesEmbed = new MessageEmbed()
           .setColor("0xd22b2b")
