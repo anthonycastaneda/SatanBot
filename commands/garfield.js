@@ -1,6 +1,7 @@
 const { SlashCommandBuilder } = require("@discordjs/builders");
 const { link } = require("fs");
 const { XMLHttpRequest } = require("w3c-xmlhttprequest");
+const sample = require("lodash.sample");
 
 module.exports = {
   data: new SlashCommandBuilder()
