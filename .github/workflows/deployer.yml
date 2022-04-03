@@ -39,6 +39,6 @@ jobs:
           git pull
           pm2 stop satanbot.js  
           node deploy-commands.js
-          pm2 start satanbot.js --name satanbot --timestamp
+          pm2 start satanbot.js --name satanbot --time
           pm2 startup
           pm2 save
