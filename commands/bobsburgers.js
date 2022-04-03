@@ -18,7 +18,7 @@ module.exports = {
         .then((result) => result.json())
         .then((output) => {
          const outputJson = (output)
-         const burger = outputJson.burgers
+         const burger = outputJson.burgers[0]
          const epTitle = outputJson.episodeName
          console.log(burger,epTitle)
           })
