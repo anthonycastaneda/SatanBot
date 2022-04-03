@@ -14,7 +14,8 @@ module.exports = {
     //load the page
     const res = await fetch(url)
     const body = await res.text()
-    let $ = cheerio.load(body);
+    console.log(body)
+    let $ = cheerio.load(body)
       //get the picture
     let pictureUrl = $('.item-comic-image img').attr('src');
     console.log(pictureUrl);
