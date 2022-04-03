@@ -23,7 +23,7 @@ module.exports = {
           
     {const hobbesEmbed = new MessageEmbed()
     .setColor("0xd22b2b")
-    .setTitle("Hobbes")
+    .setTitle("Today's Calvin and Hobbes")
     .setImage(`${pictureUrl}`);
     return interaction.editReply({ embeds: [hobbesEmbed] });
 	}
