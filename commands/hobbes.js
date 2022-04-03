@@ -15,10 +15,10 @@ module.exports = {
     const res = await fetch(url)
     const body = await res.text()
     console.log(body)
-    let $ = cheerio.load(body)
+    const $ = cheerio.load(body)
       //get the picture
-    let pictureUrl = $('.item-comic-image img').attr('src');
-    console.log(pictureUrl);
+    //let pictureUrl = $('.item-comic-image img').attr('src');
+    console.log($);
         }    
           /*{const hobbesEmbed = new MessageEmbed()
           .setColor("0xd22b2b")
