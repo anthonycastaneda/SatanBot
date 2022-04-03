@@ -11,7 +11,9 @@ module.exports = {
 		const codes = await fetch('https://flagcdn.com/en/codes.json').then(response => response.json())
         const entries = Object.entries(codes);
         const prop = entries[Math.floor(Math.random() * entries.length)];
-        console.log(prop);
+        for (const [key, value] of Object.entries(prop)) {
+        console.log(`${key}: ${value}`);
+        }
            /* {
 				{const flagEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
