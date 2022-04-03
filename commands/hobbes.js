@@ -2,7 +2,7 @@ const { SlashCommandBuilder } = require("@discordjs/builders");
 const { MessageEmbed } = require("discord.js");
 const fetch = require('node-fetch');
 const { cheerio } = require("cheerio");
-
+const date = new Date();
 
 module.exports = {
 	data: new SlashCommandBuilder()
