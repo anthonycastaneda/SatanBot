@@ -17,7 +17,7 @@ module.exports = {
 		await fetch(url)
 			.then((response) => {
 				const burgerResponse = response
-                console.log(url,burgerResponse)
+                console.log(Object.getOwnPropertyNames(burgerResponse))
 				/*{const burgerEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
 					.setTitle('You are a Good Boy')
