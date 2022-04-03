@@ -12,7 +12,7 @@ module.exports = {
         const entries = Object.entries(codes);
         const prop = entries[Math.floor(Math.random() * entries.length)];
         for (const [key, value] of Object.entries(prop)) {
-        console.log(prop['0']);
+        console.log(prop['0'],prop['1']);
         }
         /*
         {
