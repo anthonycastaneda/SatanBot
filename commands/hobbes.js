@@ -16,7 +16,7 @@ module.exports = {
     request({
         method: 'GET',
         url: `${url}`}, (err, res, body) => {
-             if (err) return console.error(err);
+             if (err) return console.log(err);
              let $ = cheerio.load(body);
              //get the picture
              let pictureUrl = $('.item-comic-image img').attr('src');
