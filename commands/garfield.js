@@ -9,7 +9,7 @@ module.exports = {
     async execute(interaction) {
     await interaction.deferReply();{
     
-      const dir = '../static/GnG';
+      const dir = './static/GnG';
       randomFile(dir, (err, file) => {
         
         console.log(`${file}`)
