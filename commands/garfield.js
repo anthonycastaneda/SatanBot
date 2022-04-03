@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require("@discordjs/builders");
 const randomFile = require("select-random-file");
+const { MessageEmbed } = require("discord.js");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -8,7 +9,7 @@ module.exports = {
     async execute(interaction) {
     await interaction.deferReply();
     
-      const dir = "../static/GnG";
+      const dir = "./static/GnG";
       randomFile(dir, (err, file) => {
         console.log(`The random file is: ${file}`);
       });
