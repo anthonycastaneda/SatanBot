@@ -15,9 +15,9 @@ module.exports = {
     
     let feed = await parser.parseURL('https://garfieldminusgarfield.net/rss');
     feed.items.forEach(item => {
-    console.log(item.content);
-    var res = item.content.match(/<img.*?src="(.*?)"/gi);
-    console.log(res);
+    let regex = /<img.*?src="(.*?)"/;
+    let src = regex.exec(item.content)[1];   
+    console.log(src);
     
     //const random = [Math.floor(Math.random() * linkArray.length)];
     //console.log(linkArray[random]);
