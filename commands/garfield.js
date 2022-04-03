@@ -11,6 +11,7 @@ module.exports = {
     
       const dir = "https://satanbot.anthonycastaneda.com/GnG/";
       randomFile(dir, (err, file) => {
+          console.log(`https://satanbot.anthonycastaneda.com/GnG/${file}`);
     
         const garfieldEmbed = new MessageEmbed()
           .setColor("0xd22b2b")
