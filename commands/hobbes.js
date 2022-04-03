@@ -14,15 +14,11 @@ module.exports = {
     //load the page
     const res = await fetch(url)
     const body = await res.text()
-    console.log(body);
-    /*
-    function parseHtml(_error, _response, body) {
-      let $ = cheerio.load(body);
+    let $ = cheerio.load(body);
       //get the picture
-      let pictureUrl = $('.item-comic-image img').attr('src');
-      console.log(pictureUrl);
-        }*/
-    
+    let pictureUrl = $('.item-comic-image img').attr('src');
+    console.log(pictureUrl);
+        }    
           /*{const hobbesEmbed = new MessageEmbed()
           .setColor("0xd22b2b")
           .setTitle("Hobbes")
@@ -32,4 +28,4 @@ module.exports = {
         
 }
 }
-}
+
