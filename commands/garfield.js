@@ -14,8 +14,8 @@ module.exports = {
     let parser = new Parser();
 
     (async () => {
-      let feed = await parser.parseURL("https://garfieldminusgarfield.net/rss");
-      feed.items.forEach((item) => {
+        let feed = await parser.parseURL("https://garfieldminusgarfield.net/rss");
+        feed.items.forEach((item) => {
         let regex = /<img.*?src="(.*?)"/;
         let src = regex.exec(item.content)[1];
         console.info(src);
