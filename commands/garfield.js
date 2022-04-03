@@ -9,9 +9,10 @@ module.exports = {
     async execute(interaction) {
     await interaction.deferReply();{
     
-      const dir = "https://satanbot.anthonycastaneda.com/GnG/";
+      const dir = '/var/www/Satanbot/GnG/';
       randomFile(dir, (err, file) => {
-          console.log(`https://satanbot.anthonycastaneda.com/GnG/${file}`);
+        
+        console.log(`https://satanbot.anthonycastaneda.com/GnG/${file}`)
     
         const garfieldEmbed = new MessageEmbed()
           .setColor("0xd22b2b")
