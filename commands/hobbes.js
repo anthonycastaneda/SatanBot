@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require("@discordjs/builders");
 const { MessageEmbed } = require("discord.js");
-const { fetch } = require("node-fetch");
+const fetch  = require("node-fetch");
 const { cheerio } = require("cheerio");
 
 module.exports = {
@@ -12,14 +12,16 @@ module.exports = {
     var dateUrl = new Date().toLocaleDateString('en-ZA')
     let url =  ('http://www.gocomics.com/calvinandhobbes/' + dateUrl + "/")
     //load the page
-    await fetch (url).then(res => res.text())
-    .then(text => console.log(text));
+    const res = await fetch(url)
+    const body = await res.text()
+    console.log(body);
+    /*
     function parseHtml(_error, _response, body) {
       let $ = cheerio.load(body);
       //get the picture
       let pictureUrl = $('.item-comic-image img').attr('src');
       console.log(pictureUrl);
-        }
+        }*/
     
           /*{const hobbesEmbed = new MessageEmbed()
           .setColor("0xd22b2b")
