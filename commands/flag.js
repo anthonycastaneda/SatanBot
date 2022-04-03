@@ -9,7 +9,9 @@ module.exports = {
 	async execute(interaction) {
 		await interaction.deferReply();
 		const codes = await fetch('https://flagcdn.com/en/codes.json').then(response => response.json())
-            console.log(codes);
+        const keys = Object.keys(codes);
+        const prop = keys[Math.floor(Math.random() * keys.length)];
+        console.log(prop);
            /* {
 				{const flagEmbed = new MessageEmbed()
 					.setColor('0xd22b2b')
