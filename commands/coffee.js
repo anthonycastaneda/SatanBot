@@ -1,4 +1,3 @@
-// @ts-nocheck
 const { SlashCommandBuilder } = require("@discordjs/builders");
 const fetch = require("node-fetch");
 
