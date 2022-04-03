@@ -20,12 +20,12 @@ module.exports = {
     let regex = /<img.*?src="(.*?)"/;
     let src = regex.exec(item.content)[1];   
     const strCopy = src.split();
-    console.log(strCopy, Array.isArray(strCopy));
+    console.log(strCopy);
     },
     //const random = [Math.floor(Math.random() * linkArray.length)];
     //console.log(linkArray[random]);
    // },
-    (src), 
+    (console.log(src)), 
     )
     
     
