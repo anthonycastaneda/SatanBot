@@ -19,8 +19,7 @@ module.exports = {
     feed.items.forEach(item => {
     let regex = /<img.*?src="(.*?)"/;
     let src = regex.exec(item.content)[1];   
-    var randomElement = _.sample(src);
-    console.log(randomElement);
+    console.info(src);
     
     //const random = [Math.floor(Math.random() * linkArray.length)];
     //console.log(linkArray[random]);
