@@ -1,4 +1,4 @@
-const documentation = require('documentation');
+const documentation = require("documentation");
 const fs = require("fs");
 
 documentation
