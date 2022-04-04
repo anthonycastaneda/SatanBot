@@ -42,3 +42,6 @@ jobs:
           pm2 start satanbot.js --name satanbot --time
           pm2 startup
           pm2 save
+   
+    - name: Repo Visualizer
+      uses: githubocto/repo-visualizer@0.8.1
