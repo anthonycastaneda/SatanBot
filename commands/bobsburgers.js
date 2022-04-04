@@ -23,8 +23,7 @@ module.exports = {
             .setTitle(`**Episode**: ${epTitle}`)
             .setURL("https://bobs-burgers.fandom.com/wiki/Burger_of_the_Day")
             .setImage(
-              "https://static.wikia.nocookie.net/bobsburgerpedia/images/4/47/Bobs-Burgers-Wiki-Animate-Burger_003.gif/revision/latest/scale-to-width-down/168?cb=20140116100604"
-            )
+              "https://static.wikia.nocookie.net/bobsburgerpedia/images/4/47/Bobs-Burgers-Wiki-Animate-Burger_003.gif")
             .setDescription(`**Burger of the Day**: ${burger}`)
 			return interaction.editReply({ embeds: [burgerEmbed] });}})
         	
