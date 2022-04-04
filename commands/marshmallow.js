@@ -25,8 +25,11 @@ module.exports = {
             .setImage(
               "https://bobsburgers-api.herokuapp.com/images/characters/293.jpg"
             )
-            .setDescription(`**First Episode**: ${firstEp}`)
-            .setFooter({text: "Oh, hey Marshmallow"});
+            .setDescription(
+              `**First Episode**: ${firstEp}
+            All I know about Marshmallow is that she comes and goes as she pleases, she answers to no one, and she is truly free`
+            )
+            .setFooter({ text: "Oh, hey Marshmallow" });
           return interaction.editReply({ embeds: [marshmallowEmbed] });
         }
       });
