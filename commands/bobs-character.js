@@ -5,7 +5,7 @@ const fetch = require("node-fetch");
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("bobs-burgers-character")
-    .setDescription("Gets a Random **Bob's Burgers** Character"),
+    .setDescription("Gets a Random Bob's Burgers Character"),
   async execute(interaction) {
     await interaction.deferReply();
     function randomIntFromInterval(min, max) {
@@ -27,7 +27,7 @@ module.exports = {
           const characterEmbed = new MessageEmbed()
             .setColor("0xd22b2b")
             .setTitle(`**${name}**`)
-            .setURL("https://bobs-burgers.fandom.com/wiki/Burger_of_the_Day")
+            .setURL("https://bobs-burgers.fandom.com/wiki/")
             .setImage(
               `https://bobsburgers-api.herokuapp.com/images/characters/${id}.jpg`
             )
