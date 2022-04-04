@@ -6,10 +6,8 @@
 
 ![wallpaper](https://anthonycastaneda.com/img/baphomet.png)<br>
 
-SatanBot is a goofy Discord bot for a private server. 
+SatanBot is a goofy Discord bot for a private server.
 
-
-**Files Diagram**
-
+## Files Diagram
 
 ![diagram](diagram.svg)
