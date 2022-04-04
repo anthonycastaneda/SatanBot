@@ -25,8 +25,8 @@ module.exports = {
             .setImage(
               "https://static.wikia.nocookie.net/bobsburgerpedia/images/4/47/Bobs-Burgers-Wiki-Animate-Burger_003.gif/revision/latest/scale-to-width-down/168?cb=20140116100604"
             )
-            .setDescription(`**Burger of the Day**: ${burger}`);}
-			return interaction.editReply({ embeds: [burgerEmbed] });})
+            .setDescription(`**Burger of the Day**: ${burger}`)
+			return interaction.editReply({ embeds: [burgerEmbed] });}})
         	
         }
 	}
