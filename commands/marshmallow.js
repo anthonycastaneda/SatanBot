@@ -25,10 +25,8 @@ module.exports = {
             .setImage(
               "https://bobsburgers-api.herokuapp.com/images/characters/293.jpg"
             )
-            .setDescription(`**First Episode**: ${firstEp}`);
-          setFooter({
-            text: "Oh, hey Marshmallow",
-          });
+            .setDescription(`**First Episode**: ${firstEp}`)
+            .setFooter({text: "Oh, hey Marshmallow"});
           return interaction.editReply({ embeds: [marshmallowEmbed] });
         }
       });
