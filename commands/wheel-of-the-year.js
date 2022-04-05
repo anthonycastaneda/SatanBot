@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
+/* This is a way to import multiple classes from the same file. */
 const { MessageActionRow, MessageSelectMenu, MessageEmbed } = require('discord.js');
+
 const { SlashCommandBuilder } = require('@discordjs/builders');
 
 

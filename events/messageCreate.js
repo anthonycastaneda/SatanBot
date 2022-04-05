@@ -1,4 +1,4 @@
-/* eslint-disable no-shadow */
+/* This is a way to import modules from the `modules` folder. */
 const logger = require('../modules/logger.js');
 const { getSettings, permlevel } = require('../modules/functions.js');
 const config = require('../config.js');

@@ -1,3 +1,7 @@
+
+
+
+/* This is the JavaScript code that will be executed when the interactionCreate event is triggered. */
 module.exports = {
 	name: 'interactionCreate',
 	execute(interaction) {
