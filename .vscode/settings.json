@@ -5,7 +5,7 @@
     "docthis.includeDateTag": true,
     "docthis.includeAuthorTag": true,
     "docthis.authorName": "Anthony Castaneda",
-    "docwriter.style": "Auto-detect",
+    "docwriter.style": "JSDoc",
     "docwriter.progress.trackFunctions": true,
     "docwriter.progress.trackMethods": true,
     "docwriter.progress.trackClasses": true,
