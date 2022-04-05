@@ -1,4 +1,6 @@
-/* It's importing the discord.js library, the config file, and the logger. */
+/**
+ * 
+ *   It's importing the discord.js library, the config file, and the logger. **/
 
 const { Client, Collection, Intents, Guild } = require('discord.js');
 const { token } = require('./config.json');
@@ -8,8 +10,8 @@ const { readdirSync } = require('fs');
 const { permLevels } = require('./config.js');
 const StatusUpdater = require('@tmware/status-rotate');
 
-/* This is creating a new Client object, and setting it's intents to the GUILDS intent.
-Then it's creating a new Collection object, and setting it to the variable `commands`.
+/** This is creating a new Client object, and setting it's intents to the GUILDS intent.
+ * Then it's creating a new Collection object, and setting it to the variable `commands`.
 Then it's creating a new Collection object, and setting it to the variable `aliases`.
 Then it's creating a new Collection object, and setting it to the variable `slashcmds`.
 Then it's creating a new Collection object, and setting it to the variable `client.commands`.
@@ -19,7 +21,7 @@ Then it's creating a new object called `levelCache` and setting it to an empty o
 Then it's looping through the `permLevels` array, and setting the key to the name of the level, and
 the value to the level.
 Then it's creating a new object called `client.container` and setting it to an empty object.
-Then it's looping through the `permLevels` array, and setting the key to the name */
+Then it's looping through the `permLevels` array, and setting the key to the name **/
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 const commands = new Collection();
 const aliases = new Collection();
@@ -28,7 +30,7 @@ client.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 
-/* It's creating an array of status messages. */
+/** It's creating an array of status messages. */
 const statusMessages = [
   { type: "PLAYING", name: "with my code" },
   { type: "LISTENING", name: "you" },
