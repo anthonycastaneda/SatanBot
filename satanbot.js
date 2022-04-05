@@ -3,6 +3,7 @@
 const { Client, Collection, Intents, Guild } = require('discord.js');
 const { token } = require('./config.json');
 const logger = require('./modules/logger.js');
+const fs = require("fs");
 const { readdirSync } = require('fs');
 const { permLevels } = require('./config.js');
 const StatusUpdater = require('@tmware/status-rotate');
