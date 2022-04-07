@@ -7,7 +7,7 @@
 /* eslint-disable no-undef */
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
-const { moonAuth } = require("..config.json");
+const { moonAuth } = require("../config.json");
 
 var date = (new Date()).toISOString().split('T')[0];
 var axios = require('axios');
