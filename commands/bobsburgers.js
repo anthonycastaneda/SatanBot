@@ -13,11 +13,12 @@ module.exports = {
     }
     const rndInt = randomIntFromInterval(1, 162);
     const url = `https://bobsburgers-api.herokuapp.com/burgerOfTheDay/${rndInt}`;
+    console.log(url);
     await fetch(url)
       .then((result) => result.json())
       .then((output) => {
         const outputJson = output;
-        const burger = outputJson.burgers[0];
+        const burger = outputJson.burger.name;
         const epTitle = outputJson.episodeName;
         {
           const burgerEmbed = new MessageEmbed()
