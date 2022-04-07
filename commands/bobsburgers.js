@@ -17,10 +17,10 @@ module.exports = {
     await fetch(url)
       .then((result) => result.json())
       .then((output) => {
-        const outputJson = output
-        const burger = outputJson.name
+        const outputJson = output;
+        const burger = outputJson.name;
         // const epTitle = outputJson.episodeName
-        console.log(outputJson.burger)
+        console.log(burger);
         {
           const burgerEmbed = new MessageEmbed()
             .setColor("0xd22b2b")
@@ -30,8 +30,9 @@ module.exports = {
               "https://static.wikia.nocookie.net/bobsburgerpedia/images/4/47/Bobs-Burgers-Wiki-Animate-Burger_003.gif/revision/latest/scale-to-width-down/168?cb=20140116100604"
             )
             .setDescription(`**Burger of the Day**: ${burger}`);
+
+          return interaction.editReply({ embeds: [burgerEmbed] });
         }
-        return interaction.editReply({ embeds: [burgerEmbed] });
       });
   },
 };
