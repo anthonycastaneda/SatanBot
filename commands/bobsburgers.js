@@ -19,6 +19,7 @@ module.exports = {
         const outputJson = output;
         const burger = outputJson.burgers[0];
         const epTitle = outputJson.episodeName;
+        console.log(outputJson);
         {
           const burgerEmbed = new MessageEmbed()
             .setColor("0xd22b2b")
