@@ -7,6 +7,7 @@
 /* eslint-disable no-undef */
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
+const { moonAuth } = require("..config.json");
 
 var date = (new Date()).toISOString().split('T')[0];
 var axios = require('axios');
@@ -34,7 +35,7 @@ var config = {
     method: 'post',
     url: 'https://api.astronomyapi.com/api/v2/studio/moon-phase',
     headers: {
-        'Authorization': 'Basic NzBkODEyMGQtMjk3YS00YzZiLTg0ZDctNmUwOGUxYmMwZTQxOmU3NWM0NzNlZTgyODgyMzU3ZmNmNzFkOGEyYTdjYjRiZTVhYWRiNjRlMzZlMWI0ZjA5NzZjYTBmNWVjYWFjOGRiZWU5MWEyODUwNTBmMDZkZDgyMTJlZWFmZjNlMmU2ZWVhOGU3MTcwODU0Y2Y0MDg5OWRhYmRlMTAzMTE3MjllNGFlMWZjZTRlOGU3OWM5ZDRhNGQyZDZlMjI5OGUwNWM0ZmYyN2UzMDNjOGYyZWZkNTE4OTIzMjMzMjdlMDY2OTdhNzcwNzY1NmE3ZTgwMmVmZDBmNzAxYWE2MGI3M2Ez',
+        'Authorization': `${moonAuth}`,
         'Content-Type': 'application/json'
     },
     data: data
