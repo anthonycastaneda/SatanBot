@@ -12,7 +12,7 @@ module.exports = {
       return Math.floor(Math.random() * (max - min + 1) + min);
     }
     const rndInt = randomIntFromInterval(1, 162);
-    const url = `https://bobsburgers-api.herokuapp.com/burgerOfTheDay/${rndInt}`;
+    const url = (`https://bobsburgers-api.herokuapp.com/burgerOfTheDay/${rndInt}`);
     await fetch(url)
       .then((result) => result.json())
       .then((output) => {
