@@ -22,7 +22,7 @@ module.exports = {
         const occupation = outputJson.occupation;
         const firstEp = outputJson.firstEpisode;
         const voice = outputJson.voicedBy;
-        const id = outputJson.id
+        const id = outputJson.id;
         {
           const characterEmbed = new MessageEmbed()
             .setColor("0xd22b2b")
@@ -30,9 +30,7 @@ module.exports = {
             .setURL("https://bobs-burgers.fandom.com/wiki/")
             .setImage(
               `https://bobsburgers-api.herokuapp.com/images/characters/${id}.jpg`
-            )
-            .setDescription(`**${name}**\n
-            **Occupation**: ${occupation}\n
+            ).setDescription(`**Occupation**: ${occupation}\n
             **Age**: ${age}\n
             **First Episode**: ${firstEp}\n
             **Voiced by**: ${voice}

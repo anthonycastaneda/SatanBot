@@ -13,7 +13,6 @@ module.exports = {
     }
     const rndInt = randomIntFromInterval(1, 162);
     const url = `https://bobsburgers-api.herokuapp.com/burgerOfTheDay/${rndInt}`;
-    console.log(url);
     await fetch(url)
       .then((result) => result.json())
       .then((output) => {
@@ -25,7 +24,8 @@ module.exports = {
             .setTitle("**Burger of the Day**")
             .setURL("https://thebobsburgerexperiment.com")
             .setImage(
-              "https://satanbot.anthonycastaneda.com/static/OGNM-Burger.png")
+              "https://satanbot.anthonycastaneda.com/static/OGNM-Burger.png"
+            )
             .setDescription(`**${burger}**`);
 
           return interaction.editReply({ embeds: [burgerEmbed] });

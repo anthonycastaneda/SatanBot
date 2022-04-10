@@ -3,45 +3,44 @@ name: Deploy-to-VPS
 on: push
 
 jobs:
-  build:
+    build:
+        runs-on: ubuntu-latest
 
-    runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
 
-    steps:
-    - uses: actions/checkout@v2
+            # Runs a set of commands using the runners shell
+            - name: Run a multi-line script
+              run: |
+                  mkdir ../build
+                  cp -TR . ../build
+                  tar --exclude-vcs -zcvf deploy.tar ../build/
 
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
-      run: |
-        mkdir ../build
-        cp -TR . ../build
-        tar --exclude-vcs -zcvf deploy.tar ../build/
+            - name: copy file via scp
+              uses: appleboy/scp-action@master
+              with:
+                  host: ${{ secrets.HOST }}
+                  username: ${{ secrets.USERNAME }}
+                  key: ${{ secrets.KEY }}
+                  port: ${{ secrets.PORT }}
+                  source: "."
+                  target: "test"
 
-    - name: copy file via scp
-      uses: appleboy/scp-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.KEY }}
-        port: ${{ secrets.PORT }}
-        source: "."
-        target: "test"
+            - name: executing remote ssh commands using ssh key
+              uses: appleboy/ssh-action@master
+              with:
+                  host: ${{ secrets.HOST }}
+                  username: ${{ secrets.USERNAME }}
+                  key: ${{ secrets.KEY }}
+                  port: ${{ secrets.PORT }}
+                  script: |
+                      cd SatanBot
+                      git pull
+                      pm2 stop satanbot.js
+                      node deploy-commands.js
+                      pm2 start satanbot.js --name satanbot --time
+                      pm2 startup
+                      pm2 save
 
-    - name: executing remote ssh commands using ssh key
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.KEY }}
-        port: ${{ secrets.PORT }}
-        script: |
-          cd SatanBot
-          git pull
-          pm2 stop satanbot.js
-          node deploy-commands.js
-          pm2 start satanbot.js --name satanbot --time
-          pm2 startup
-          pm2 save
-
-    - name: Repo Visualizer
-      uses: githubocto/repo-visualizer@0.8.1
+            - name: Repo Visualizer
+              uses: githubocto/repo-visualizer@0.8.1

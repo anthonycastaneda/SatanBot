@@ -9,5 +9,8 @@
     "docwriter.progress.trackFunctions": true,
     "docwriter.progress.trackMethods": true,
     "docwriter.progress.trackClasses": true,
-    "docwriter.progress.trackTypes": true
+    "docwriter.progress.trackTypes": true,
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-workflow.json": "file:///Users/anthonycastaneda/SatanBot/.github/workflows/deploy.yml"
+    }
 }

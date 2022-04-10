@@ -6,14 +6,13 @@ module.exports = {
   data: new SlashCommandBuilder()
     .setName("garfield")
     .setDescription("Garfield Minus Garfield"),
-    async execute(interaction) {
-    await interaction.deferReply();{
-    
-      const dir = './static/GnG';
+  async execute(interaction) {
+    await interaction.deferReply();
+    {
+      const dir = "./static/GnG";
       randomFile(dir, (err, file) => {
-        
-        console.log(`${file}`)
-    
+        console.log(`${file}`);
+
         const garfieldEmbed = new MessageEmbed()
           .setColor("0xd22b2b")
           .setTitle("Garfield Minus Garfield")
@@ -22,8 +21,8 @@ module.exports = {
           )
           .setImage(`https://satanbot.anthonycastaneda.com/GnG/${file}`)
           .setURL("https://garfieldminusgarfield.net");
-      return interaction.editReply({ embeds: [garfieldEmbed] });
-        })
+        return interaction.editReply({ embeds: [garfieldEmbed] });
+      });
     }
-},
-}
+  },
+};
