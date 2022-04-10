@@ -37,13 +37,16 @@ const statusMessages = [
   { type: "PLAYING", name: "hard to get" },
   { type: "LISTENING", name: "Norwegian Black Metal" },
   { type: "LISTENING", name: "Björk" },
+  { type: "LISTENING", name: "Built to Spill" },
+  { type: "LISTENING", name: "Fugazi" },
   { type: "LISTENING", name: "a bucket of complaints" },
   { type: "PLAYING", name: "with {users} users" },
   { type: "LISTENING", name: "{users} users" },
   { type: "WATCHING", name: "over ALL the users" },
+  { type: "WATCHING", name: "Ancient Aliens" },
+  { type: "WATCHING", name: "Amish Rake Fights" },
   { type: "WATCHING", name: "over ALL the channels" },
   { type: "PLAYING", name: "with your emojis." },
-  { type: "PLAYING", name: "Regular updates you won't notice" },
 ];
 
 /* This is creating a new StatusUpdater object, and passing it the client and statusMessages array. */
