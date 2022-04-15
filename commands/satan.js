@@ -13,7 +13,7 @@ module.exports = {
       .setColor("#d10404")
       .setTitle("The Satanic Temple ~~(𖤐)~~")
       .setURL("https://thesatanictemple.com")
-      .setImage("https://anthonycastaneda.com/img/baph-poster.png")
+      .setImage("https://docs.anthonycastaneda.com/img/baph-poster.png")
       .setAuthor(
         "Helel ben Shachar",
         "https://cdn.shopify.com/s/files/1/0428/0465/t/58/assets/satan-logo-red.png",
@@ -22,7 +22,7 @@ module.exports = {
       .setDescription(
         "Information about TSTs active campaigns can be found [here](https://thesatanictemple.com/pages/campaigns). ```The Mission Of The Satanic Temple Is To Encourage Benevolence And Empathy, Reject Tyrannical Authority, Advocate Practical Common Sense, Oppose Injustice, And Undertake Noble Pursuits```"
       )
-      .setThumbnail("https://anthonycastaneda.com/img/binarysatan.png")
+      .setThumbnail("https://docs.anthonycastaneda.com/img/binarysatan.png")
       .addFields(
         {
           name: "♀️",

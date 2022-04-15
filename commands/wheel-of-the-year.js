@@ -17,7 +17,7 @@ module.exports = {
       .setTitle("Wheel of the Year")
       .setDescription("wiki article")
       .setURL("https://en.wikipedia.org/wiki/Wheel_of_the_Year/")
-      .setImage("https://anthonycastaneda.com/img/wheel.png");
+      .setImage("https://docs.anthonycastaneda.com/img/wheel.png");
     const row = new MessageActionRow().addComponents(
       new MessageSelectMenu()
         .setCustomId("Sabbat")
