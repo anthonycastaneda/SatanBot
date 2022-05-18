@@ -9,5 +9,3 @@ SatanBot is a goofy Discord bot for a private server.
 ## Files Diagram
 
 ![diagram](diagram.svg)
-
-![flow](sbflow.svg)
