@@ -8,7 +8,7 @@ module.exports = {
         .setDescription("🏳️‍🌈 Gets Marshmallow 🏳️‍⚧️"),
     async execute(interaction) {
         await interaction.deferReply();
-        const url = "https://bobsburgers-api.herokuapp.com/characters/293";
+        const url = "https://bobsburgers-api.herokuapp.com/characters/296";
         await fetch(url)
             .then((result) => result.json())
             .then((output) => {
@@ -23,7 +23,7 @@ module.exports = {
                             "https://satanbot.anthonycastaneda.com/static/marshmallow.jpeg"
                         )
                         .setImage(
-                            "https://bobsburgers-api.herokuapp.com/images/characters/293.jpg"
+                            "https://bobsburgers-api.herokuapp.com/images/characters/296.jpg"
                         )
                         .setDescription(
                             `**First Episode**: ${firstEp}
