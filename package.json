@@ -22,6 +22,7 @@
     "http-errors": "~1.6.3",
     "node-fetch": "^2.6.7",
     "npm": "^8.12.1",
+    "pm2": "^5.2.0",
     "select-random-file": "^1.2.1",
     "w3c-xmlhttprequest": "^3.0.4"
   },
