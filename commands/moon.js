@@ -2,9 +2,7 @@ const { SlashCommandBuilder } = require("@discordjs/builders");
 const { MessageEmbed } = require("discord.js");
 const { moonAuth } = require("../config.json");
 
-//let date = new Date().toISOString().split("T")[0];
-var date = new Date(); // Create date
-var timestamp = date.toLocaleString('sv-se', { timeZone: 'America/Chicago' }).replace(" ", "T").split(".")[0]; // Reformat the Locale timestamp ISO YYYY-MM-DDThh:mm:ss
+let date = new Date().toISOString().split("T")[0];
 var axios = require("axios");
 var data = JSON.stringify({
     format: "png",
@@ -18,7 +16,7 @@ var data = JSON.stringify({
     observer: {
         latitude: 30.7235263,
         longitude: -95.550777,
-        date: `${timestamp}`,
+        date: `${date}`,
     },
     view: {
         type: "landscape-simple",
