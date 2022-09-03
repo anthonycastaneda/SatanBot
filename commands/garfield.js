@@ -19,7 +19,7 @@ module.exports = {
                     .setDescription(
                         "This is a journey deep into the mind of an isolated young everyman as he fights a losing battle against loneliness and depression in a quiet American suburb"
                     )
-                    .setImage(`https://minecraft.anthonycastaneda.com/${file}`)
+                    .setImage(`https://satanbot.anthonycastaneda.com/${file}`)
                     .setURL("https://garfieldminusgarfield.net");
                 return interaction.editReply({ embeds: [garfieldEmbed] });
             });
