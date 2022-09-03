@@ -1,9 +1,7 @@
-const { SlashCommandBuilder } = require("@discordjs/builders");
-const { MessageEmbed } = require("discord.js");
-const { moonAuth } = require("../config.json");
-var axios = require("axios");
-
-//let date = new Date().toISOString().split("T")[0];
+import { SlashCommandBuilder } from "@discordjs/builders";
+import { MessageEmbed } from "discord.js";
+import { moonAuth } from "../config.json";
+import axios from "axios";
 
 // current datetime string in America/Chicago timezone
 let chicago_datetime_str = new Date().toLocaleString("en-US", { timeZone: "America/Chicago" });
@@ -22,7 +20,6 @@ let date = ("0" + date_chicago.getDate()).slice(-2);
 
 // date time in YYYY-MM-DD format
 let date_time = year + "-" + month + "-" + date;
-
 
 
 var data = JSON.stringify({
@@ -55,26 +52,24 @@ var config = {
     data: data,
 };
 
-module.exports = {
-    data: new SlashCommandBuilder()
-        .setName("moon")
-        .setDescription("Get Huntsville Moony Phase"),
-    async execute(interaction) {
-        await interaction.deferReply();
-        axios(config)
-            .then((response) => {
-                const moonUrl = response.data.data;
-                console.log(moonUrl);
-                if (moonUrl.imageUrl) {
-                    const moonEmbed = new MessageEmbed()
-                        .setColor("#F0386B")
-                        .setTitle("Mooooony")
-                        .setImage(moonUrl.imageUrl);
-                    return interaction.editReply({ embeds: [moonEmbed] });
-                }
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-    },
-};
+export const data = new SlashCommandBuilder()
+    .setName("moon")
+    .setDescription("Get Huntsville Moony Phase");
+export async function execute(interaction) {
+    await interaction.deferReply();
+    axios(config)
+        .then((response) => {
+            const moonUrl = response.data.data;
+            console.log(moonUrl);
+            if (moonUrl.imageUrl) {
+                const moonEmbed = new MessageEmbed()
+                    .setColor("#F0386B")
+                    .setTitle("Mooooony")
+                    .setImage(moonUrl.imageUrl);
+                return interaction.editReply({ embeds: [moonEmbed] });
+            }
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
