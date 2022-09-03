@@ -1,9 +1,30 @@
 const { SlashCommandBuilder } = require("@discordjs/builders");
 const { MessageEmbed } = require("discord.js");
 const { moonAuth } = require("../config.json");
-
-let date = new Date().toISOString().split("T")[0];
 var axios = require("axios");
+
+//let date = new Date().toISOString().split("T")[0];
+
+// current datetime string in America/Chicago timezone
+let chicago_datetime_str = new Date().toLocaleString("en-US", { timeZone: "America/Chicago" });
+
+// create new Date object
+let date_chicago = new Date(chicago_datetime_str);
+
+// year as (YYYY) format
+let year = date_chicago.getFullYear();
+
+// month as (MM) format
+let month = ("0" + (date_chicago.getMonth() + 1)).slice(-2);
+
+// date as (DD) format
+let date = ("0" + date_chicago.getDate()).slice(-2);
+
+// date time in YYYY-MM-DD format
+let date_time = year + "-" + month + "-" + date;
+
+
+
 var data = JSON.stringify({
     format: "png",
     style: {
@@ -16,7 +37,7 @@ var data = JSON.stringify({
     observer: {
         latitude: 30.7235263,
         longitude: -95.550777,
-        date: `${date}`,
+        date: `${date_time}`,
     },
     view: {
         type: "landscape-simple",
