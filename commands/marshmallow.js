@@ -20,7 +20,7 @@ module.exports = {
                         .setTitle("Marshmallow")
                         .setURL("https://bobs-burgers.fandom.com/wiki/Marshmallow")
                         .setThumbnail(
-                            "https://satanbot.anthonycastaneda.com/static/marshmallow.jpeg"
+                            "https://satanbot.anthonycastaneda.com/marshmallow.jpeg"
                         )
                         .setImage(
                             "https://bobsburgers-api.herokuapp.com/images/characters/296.jpg"

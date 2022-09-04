@@ -4,7 +4,9 @@ const { moonAuth } = require("../config.json");
 var axios = require("axios");
 
 // current datetime string in America/Chicago timezone
-let chicago_datetime_str = new Date().toLocaleString("en-US", { timeZone: "America/Chicago" });
+let chicago_datetime_str = new Date().toLocaleString("en-US", {
+    timeZone: "America/Chicago",
+});
 
 // create new Date object
 let date_chicago = new Date(chicago_datetime_str);
@@ -20,7 +22,6 @@ let date = ("0" + date_chicago.getDate()).slice(-2);
 
 // date time in YYYY-MM-DD format
 let date_time = year + "-" + month + "-" + date;
-
 
 var data = JSON.stringify({
     format: "png",
