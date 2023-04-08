@@ -6,3 +6,4 @@ SatanBot 2.0.txt
 .vscode/launch.json
 /work-in-progress
 static/.DS_Store
+package-lock.json
