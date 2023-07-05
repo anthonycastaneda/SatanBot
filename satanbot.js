@@ -32,7 +32,7 @@ const statusMessages = [
     { type: "WATCHING", name: "Ancient Aliens" },
     { type: "WATCHING", name: "Amish Rake Fights" },
     { type: "WATCHING", name: "over ALL the channels" },
-    { type: "PLAYING", name: "with your emojis." },
+    { type: "PLAYING", name: "with your emoji." },
 ];
 
 
